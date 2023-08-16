@@ -13,6 +13,10 @@
     aspect-ratio: 1/1;
     position: absolute;
     bottom: -170%;
+    animation: spin 50s linear infinite;
+ }
+ @keyframes spin{
+    100% { transform: rotate(360deg); }
  }
  .spaceShip {
    width: 130px;
