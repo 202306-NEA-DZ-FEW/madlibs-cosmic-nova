@@ -4,6 +4,9 @@
  body{
     background-image: url('./images/Group.svg');
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
  }
  .cosmicPlanet{
     width: 100%;
@@ -11,4 +14,34 @@
     position: absolute;
     bottom: -170%;
  }
- 
+ .spaceShip {
+   width: 130px;
+   height: 200px;
+   position: absolute;
+   top: 0;
+   margin: auto;
+ }
+ .UFO {
+   width: 200px;
+   height: 90px;
+   position: absolute;
+   top: 40%;
+   margin: auto;
+   right: 70px;
+ }
+ .star {
+   width: 700px;
+   height: 50px;
+   position: absolute;
+   top: 5%;
+   margin: auto;
+   left: 80px;
+ }
+ .starlight {
+   width: 600px;
+   height: 50px;
+   position: absolute;
+   top: 40%;
+   margin: auto;
+   right: 20px;
+ }
