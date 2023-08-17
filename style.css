@@ -6,6 +6,8 @@
  }
  body{
     background-image: url('./images/Group.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
     display: flex;
     flex-direction: column;
