@@ -41,36 +41,7 @@ getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
 });
 
-/* let lastScrollTop = 0;
 
-window.addEventListener('keydown', function() {
-  console.log('Scrolled down');
-  const currentScrollTop = window.scrollY;
-
-  if (currentScrollTop > lastScrollTop) {
-    // Scrolled down
-
-    console.log('Scrolled down');
-
-  } else {  
-    // Scrolled up
-    console.log('Scrolled up');
-  }
-
-  lastScrollTop = currentScrollTop;
-
-}); */
-/* let lastScroll = 0
-window.onwheel= (e)=>{
-  const currentOffset = e.offsetY
-  if (currentOffset > lastScroll){
-    console.log("go down")
-  } else {
-    console.log("go up")
-  }
-  lastScroll = currentOffset
-}
- */
 const ship = document.getElementById('spaceShip')
 ship.style.top = '0px';
 window.addEventListener('wheel', (e) => {
