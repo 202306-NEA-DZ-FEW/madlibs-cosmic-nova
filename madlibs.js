@@ -56,16 +56,27 @@ function parseStory(rawStory) {
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
 
-  
   const edit = document.querySelector('.madLibsEdit');
   const preview = document.querySelector('.madLibsPreview');
 
+  const story = document.createElement('p')
+  story.id='storyPreview'
+  story.textContent=""
+  preview.appendChild(story)
   processedStory.forEach((wordObj)=> {
-    if(wordObj.word){
+    const storyContent = story.textContent
+    if(!wordObj.pos){ console.log('story syory')
+      story.textContent= `${storyContent} ${wordObj.word} `
+    }else{
+      const span = document.createElement('span')
+      span.textContent= `____[${wordObj.pos}]_____`
+      story.appendChild(span)
+    }
+    /* if(wordObj.word){
     const span = document.createElement('span');
     span.textContent = wordObj.word;
     preview.appendChild(span);
-    }
+    } */
   })
 
   
@@ -121,3 +132,9 @@ console.log(scrollDown)
 $(function() {
   $('a[href*=#]').on
 });*/
+
+
+//create the form and append it in the edit Div
+/* 
+ we call the parseStory fnct to fetch the words obj
+*/
