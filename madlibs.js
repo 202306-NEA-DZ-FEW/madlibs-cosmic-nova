@@ -78,7 +78,19 @@ getRawStory().then(parseStory).then((processedStory) => {
     preview.appendChild(span);
     } */
   })
-
+  processedStory.forEach((wordObj)=> {
+    if(wordObj.pos){
+      const div = document.createElement('div')
+      /*const input = document.createElement('input')
+      const label = document.createElement('label')
+      div.appendChild(input)
+      div.appendChild(label)*/
+      div.innerHTML= `$<label for="">[${wordObj.pos}]</label>
+      <input type="text"  >`
+      edit.appendChild(div)
+    } 
+    
+  })
   
 
 });
