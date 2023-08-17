@@ -98,14 +98,14 @@ const startMusicButton = document.getElementById("startMusic");
 const stopMusicButton = document.getElementById("stopMusic");
         stopMusicButton.addEventListener("click", () => {
           console.log("pause")
-          backgroundMusic.pause();
+          backgroundMusic.play();
           stopMusicButton.classList.toggle('off')
           startMusicButton.classList.toggle('off')
           }
           );
           startMusicButton.addEventListener('click',()=>{
             console.log("play")
-            backgroundMusic.play();
+            backgroundMusic.pause();
             stopMusicButton.classList.toggle('off')
             startMusicButton.classList.toggle('off')
           })
