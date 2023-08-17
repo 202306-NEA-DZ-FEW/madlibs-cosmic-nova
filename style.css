@@ -1,6 +1,9 @@
 /**
  * Your CSS goes here.
  */
+ *{
+    font-family: "Audiowide", sans-serif;
+ }
  body{
     background-image: url('./images/Group.svg');
     overflow: hidden;
@@ -24,6 +27,7 @@
    position: absolute;
    top: 0;
    margin: auto;
+   z-index: 50;
  }
  .UFO {
    width: 200px;
