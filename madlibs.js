@@ -56,32 +56,18 @@ function parseStory(rawStory) {
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
 
+  
   const edit = document.querySelector('.madLibsEdit');
   const preview = document.querySelector('.madLibsPreview');
 
-  const story = document.createElement('p') //the element that will hold the story
-  story.id='storyPreview'
-  story.textContent=""
-  preview.appendChild(story) // we append it to the prewien div
-  processedStory.forEach((wordObj)=> { // we will add word by word to create the story
-    const storyContent = story.textContent // we save the current content of the story 
-    if(!wordObj.pos){ //we check if it will be hiddne or visible 
-      story.textContent= `${storyContent} ${wordObj.word} `//in case visible we add it to the content
-    }else{ // in case hidden we will put it in span and append it to the story
-      const span = document.createElement('span')
-      span.textContent= `____[${wordObj.pos}]____`
-      story.appendChild(span)
+  processedStory.forEach((wordObj)=> {
+    if(wordObj.word){
+    const span = document.createElement('span');
+    span.textContent = wordObj.word;
+    preview.appendChild(span);
     }
   })
-  processedStory.forEach((wordObj)=> {
-    if(wordObj.pos){ //we check if it a hidden word
-      const div = document.createElement('div') //the div that will hold the inut and label
-      div.innerHTML= `$<label for="">[${wordObj.pos}]</label>
-      <input type="text"  >`
-      edit.appendChild(div)// we add it to the edit Div
-    } 
-    
-  })
+
   
 
 });
@@ -89,19 +75,32 @@ getRawStory().then(parseStory).then((processedStory) => {
 
 
 
-const ship = document.getElementById('spaceShip')
+const ship = document.getElementById('spaceShip');
+const fire = document.getElementById('fire');
+fire.style.top = '220px';
 ship.style.top = '0px';
-window.addEventListener('wheel', (e) => {
-  let positionTop = parseInt(ship.style.top.replace("px",""),10)
-  console.log(parseInt(positionTop))
-  console.log(positionTop)
-  if (e.deltaY > 0) {
-    ship.style.top= `${positionTop + 5}px`
-    console.log('go down', e.deltaY);
-  } else {
-    ship.style.top= `${positionTop - 5}px`
-    console.log('go up', e.deltaY);
+fire.style.opacity = '100';
+
+
+window.addEventListener('scroll', (e) => {
+  let value = window.scrollY;
+  console.log(value);
+  if (value <= 179){
+    ship.style.top = value * 4 + 'px';
+    fire.style.top = 220 + value * 4 + 'px';
+   
+    
   }
+
+  
+   
+  if (value >= 100){
+    fire.style.opacity = 1 - (value - 100) / 100;
+    
+    
+  }
+
+  
 });
 
 
@@ -111,24 +110,27 @@ const backgroundMusic = document.getElementById("backgroundMusic");
 const startMusicButton = document.getElementById("startMusic");
 const stopMusicButton = document.getElementById("stopMusic");
         stopMusicButton.addEventListener("click", () => {
+          console.log("pause")
           backgroundMusic.play();
           stopMusicButton.classList.toggle('off')
           startMusicButton.classList.toggle('off')
           }
           );
           startMusicButton.addEventListener('click',()=>{
+            console.log("play")
             backgroundMusic.pause();
             stopMusicButton.classList.toggle('off')
             startMusicButton.classList.toggle('off')
           })
 
-// we set the edit and preview and the title to be hidden, and will be diwplayed after hitting enter
-const container = document.getElementById('container')
-const enter = document.getElementById('enter')
 
-enter.addEventListener("click", ()=>{
-  container.classList.toggle('none')
-  document.getElementById('hero-title').classList.toggle('none')
-  enter.classList.toggle('none')
-  document.querySelector('.scroll').classList.toggle('none')
-})
+const scrollDown = document.getElementByClassName("scroll");
+console.log(scrollDown)
+/*scrollDown.addEventListener('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+});
+
+$(function() {
+  $('a[href*=#]').on
+});*/
