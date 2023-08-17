@@ -109,3 +109,15 @@ const stopMusicButton = document.getElementById("stopMusic");
             stopMusicButton.classList.toggle('off')
             startMusicButton.classList.toggle('off')
           })
+
+
+const scrollDown = document.getElementByClassName("scroll");
+console.log(scrollDown)
+/*scrollDown.addEventListener('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+});
+
+$(function() {
+  $('a[href*=#]').on
+});*/
