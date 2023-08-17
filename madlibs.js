@@ -111,33 +111,24 @@ const backgroundMusic = document.getElementById("backgroundMusic");
 const startMusicButton = document.getElementById("startMusic");
 const stopMusicButton = document.getElementById("stopMusic");
         stopMusicButton.addEventListener("click", () => {
-          console.log("pause")
           backgroundMusic.play();
           stopMusicButton.classList.toggle('off')
           startMusicButton.classList.toggle('off')
           }
           );
           startMusicButton.addEventListener('click',()=>{
-            console.log("play")
             backgroundMusic.pause();
             stopMusicButton.classList.toggle('off')
             startMusicButton.classList.toggle('off')
           })
 
+// we set the edit and preview and the title to be hidden, and will be diwplayed after hitting enter
+const container = document.getElementById('container')
+const enter = document.getElementById('enter')
 
-const scrollDown = document.getElementByClassName("scroll");
-console.log(scrollDown)
-/*scrollDown.addEventListener('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
-});
-
-$(function() {
-  $('a[href*=#]').on
-});*/
-
-
-//create the form and append it in the edit Div
-/* 
- we call the parseStory fnct to fetch the words obj
-*/
+enter.addEventListener("click", ()=>{
+  container.classList.toggle('none')
+  document.getElementById('hero-title').classList.toggle('none')
+  enter.classList.toggle('none')
+  document.querySelector('.scroll').classList.toggle('none')
+})
