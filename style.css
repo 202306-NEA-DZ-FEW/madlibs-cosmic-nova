@@ -3,16 +3,10 @@
  */
  *{
     font-family: "Audiowide", sans-serif;
+    scroll-behavior: smooth;
  }
- body{
-    background-image: url('./images/Group.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
+
+ 
  #hero-title{
   color: aliceblue;
   text-align: center;
@@ -29,22 +23,58 @@
  }
 
  .cosmicPlanet{
-    width: 100%;
-    aspect-ratio: 1/1;
-    position: absolute;
-    bottom: -170%;
-    animation: spin 50s linear infinite;
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  bottom: -140%;
+  align-content: center;
+  padding-left: 70px;
+  animation: spin 150s linear infinite;
+  display: block;
+  mix-blend-mode:screen;
+  z-index: 2;
+}
+
+ .Group{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  object-fit: cover;
  }
+
+ .img2{
+  position: absolute;
+  width: 100%;
+  height: 150vh;
+  top: 750px;
+  left: 0;
+  object-fit: cover;
+  
+  z-index: 3;
+ }
+
+ 
  @keyframes spin{
     100% { transform: rotate(360deg); }
  }
  .spaceShip {
-   width: 130px;
-   height: 200px;
+   width: 200px;
+   height: auto;
    position: absolute;
    top: 0;
-   margin-top: 19%;
+   left: 650px;
    z-index: 50;
+ }
+ .fire {
+   width: 200px;
+   height: auto;
+   position: absolute;
+   top: 210px;
+   left: 650px;
+   z-index: 49;
+   transform: rotate(180deg);
  }
  .UFO {
    width: 200px;
@@ -70,61 +100,41 @@
    margin: auto;
    right: 20px;
  }
- .scroll {
+.press{
+  left: 70px;
+  bottom: 50px;
+  z-index: 20;
+  position: absolute; 
+}
+.scroll{
   position: absolute;
-  right: 45px;
-  color: white;
-  display: flex;
- justify-content: center;
- bottom: 20px;
- flex-direction: column;
- align-items: center;
- font-size: 28px;
-  font-weight: 500;
+  left: 1350px;
+  bottom: 50px;
+  z-index: 9;
 }
 
- .scroll h1, .press h1 {
-  font-size: 28px;
-  font-weight: 500;
+.press,.scroll {
   
-
+    filter: drop-shadow(0 px 5px #4006f3) drop-shadow(0 px 25px #4006f3);
  }
- .press {
-  position: absolute;
-  left: 45px;
-  color: white;
-  display: flex;
- justify-content: center;
- bottom: 45px;
- flex-direction: column;
- align-items: center;
- font-size: 28px;
-  font-weight: 500;
- }
- .press i{
-  transform: rotate(90deg);
- }
- .press, .scroll {
-  background: transparent;
-  padding: 1rem;
+ 
+  .press:hover, .scroll:hover, .speakers:hover{   
+    filter: drop-shadow(0 5px 5px #4006f3) drop-shadow(0 25px 25px #4006f3)
+    drop-shadow(0 25px 150px #4006f3);
   
- }
+ } 
  .speakers {
   position:absolute;
   right: 45px;
   top: 45px;
   width: 50px;
   height: 50px;
-  border: 2px solid #4006f3;
   background: transparent;
   color: white;
   font-size: 28px;
-  font-weight: 500;
- box-shadow: 0 0 5px #4006f3, 0 0 25px #4006f3;
+
  }
- .speakers:hover{
-  box-shadow: 0 0 5px #4006f3, 0 0 25px #4006f3, 0 0 50px #4006f3, 0 0 100px #4006f3, 0 0 200px #4006f3;
- }
+  
  .on {
   display: block;
  }
@@ -132,14 +142,6 @@
   display: none;
  }
  button {
-  box-shadow: 0 0 5px #4006f3, 0 0 25px #4006f3;
   border-radius: 5px;
-  border: 2px solid #4006f3;
- }
-
- button:hover {
-  box-shadow: 0 0 5px #4006f3, 0 0 25px #4006f3, 0 0 50px #4006f3, 0 0 100px #4006f3, 0 0 200px #4006f3;
- }
- .none{
-  display: none;
+  border: 1px solid #4006f3;
  }
