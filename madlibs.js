@@ -39,6 +39,18 @@ function parseStory(rawStory) {
  */
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
+
+  
+  const edit = document.querySelector('madLibsEdit');
+  const preview = document.querySelector('madLibsPreview');
+
+  processedStory.forEach((wordObj)=> {
+    if(wordObj.word){
+    const span = document.createElement('span');
+    span.textContent = wordObj.word;
+    preview.appendChild(span);
+    }
+  })
 });
 
 
