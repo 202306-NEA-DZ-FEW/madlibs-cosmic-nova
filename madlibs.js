@@ -89,3 +89,17 @@ window.addEventListener('wheel', (e) => {
     console.log('go up', e.deltaY);
   }
 });
+
+
+/// function for music button  toggleMusicButton
+
+const backgroundMusic = document.getElementById("backgroundMusic");
+        const stopMusicButton = document.getElementById("stopMusic");
+
+        stopMusicButton.addEventListener("click", () => {
+          if (backgroundMusic.paused) {
+              backgroundMusic.play();
+          } else {
+              backgroundMusic.pause();
+          }
+      });

@@ -11,6 +11,21 @@
     flex-direction: column;
     align-items: center;
  }
+ #hero-title{
+  color: aliceblue;
+  text-align: center;
+  margin-top: 6%;
+  font-size: large;
+ 
+ }
+ audio {
+  display: none;
+}
+ .galaxy-title{
+  border: 2px solid #ccc;
+  padding: 0.5em;
+ }
+
  .cosmicPlanet{
     width: 100%;
     aspect-ratio: 1/1;
@@ -26,7 +41,7 @@
    height: 200px;
    position: absolute;
    top: 0;
-   margin: auto;
+   margin-top: 19%;
    z-index: 50;
  }
  .UFO {
