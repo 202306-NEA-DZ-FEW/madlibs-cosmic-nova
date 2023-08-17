@@ -26,9 +26,25 @@
  * There are multiple ways to do this, but you may want to use regular expressions.
  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
  */
+
+
 function parseStory(rawStory) {
-  // Your code here.
-  return {}; // This line is currently wrong :)
+  console.log(rawStory);
+  const words = rawStory.split(/\s/);
+  const obj = [];
+
+  words.forEach((word) => {
+    if (word.includes('[')){
+      const pos = word.split(/[\[\]]/);
+      obj.push({word: pos[0], pos: pos[1]});
+    }else{
+     obj.push({word: word});
+    }
+
+    
+  });
+   return obj;
+
 }
 
 /**
@@ -39,7 +55,12 @@ function parseStory(rawStory) {
  */
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
+
+  
+
 });
+
+
 
 
 const ship = document.getElementById('spaceShip')
