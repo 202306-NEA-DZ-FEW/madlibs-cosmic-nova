@@ -94,12 +94,18 @@ window.addEventListener('wheel', (e) => {
 /// function for music button  toggleMusicButton
 
 const backgroundMusic = document.getElementById("backgroundMusic");
-        const stopMusicButton = document.getElementById("stopMusic");
-
+const startMusicButton = document.getElementById("startMusic");
+const stopMusicButton = document.getElementById("stopMusic");
         stopMusicButton.addEventListener("click", () => {
-          if (backgroundMusic.paused) {
-              backgroundMusic.play();
-          } else {
-              backgroundMusic.pause();
+          console.log("pause")
+          backgroundMusic.pause();
+          stopMusicButton.classList.toggle('off')
+          startMusicButton.classList.toggle('off')
           }
-      });
+          );
+          startMusicButton.addEventListener('click',()=>{
+            console.log("play")
+            backgroundMusic.play();
+            stopMusicButton.classList.toggle('off')
+            startMusicButton.classList.toggle('off')
+          })
