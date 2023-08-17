@@ -59,24 +59,19 @@ getRawStory().then(parseStory).then((processedStory) => {
   const edit = document.querySelector('.madLibsEdit');
   const preview = document.querySelector('.madLibsPreview');
 
-  const story = document.createElement('p')
+  const story = document.createElement('p') 
   story.id='storyPreview'
   story.textContent=""
-  preview.appendChild(story)
-  processedStory.forEach((wordObj)=> {
-    const storyContent = story.textContent
-    if(!wordObj.pos){ console.log('story syory')
+  preview.appendChild(story) 
+  processedStory.forEach((wordObj)=> { 
+    const storyContent = story.textContent 
+    if(!wordObj.pos){ 
       story.textContent= `${storyContent} ${wordObj.word} `
-    }else{
+    }else{ 
       const span = document.createElement('span')
-      span.textContent= `____[${wordObj.pos}]_____`
+      span.textContent= `____[${wordObj.pos}]____`
       story.appendChild(span)
     }
-    /* if(wordObj.word){
-    const span = document.createElement('span');
-    span.textContent = wordObj.word;
-    preview.appendChild(span);
-    } */
   })
 
   
