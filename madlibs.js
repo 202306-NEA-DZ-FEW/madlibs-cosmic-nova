@@ -93,13 +93,29 @@ getRawStory().then(parseStory).then((processedStory) => {
 const ship = document.getElementById('spaceShip');
 const fire = document.getElementById('fire');
 const planet = document.getElementById('planet');
-const enter = document.getElementById('enter')
+const enter = document.getElementById('enter');
+const scroll = document.getElementById('scroll');
+const wish = document.getElementById('wish')
+const text1 = document.getElementById('text1')
+const text2 = document.getElementById('text2')
+const ufo = document.getElementById('ufo')
 fire.style.top = '220px';
 ship.style.top = '0px';
 fire.style.opacity = '100';
 planet.style.width = '100%';
 planet.style.top = '350px';
-planet.style.paddingLeft = '60px';
+planet.style.paddingLeft = '20px';
+wish.style.left = '600px';
+wish.style.top = '-200px';
+ufo.style.top = '300px';
+ufo.style.left = '1000px';
+ufo.style.height = '100px';
+text1.style.display = 'none';
+text2.style.display = 'none';
+enter.style.display = 'block';
+scroll.style.display = 'block';
+
+
 
 
 
@@ -110,10 +126,14 @@ window.addEventListener('scroll', (e) => {
   if (value <= 90){
     ship.style.top = value * 5.5 + 'px';
     fire.style.top = 220 + value * 5.5 + 'px';
-    planet.style.left = 60 + value * 2 + 'px';
+    planet.style.left = 20 + value * 2.5 + 'px';
+    wish.style.left = 600 - value * 6 + 'px';
+    wish.style.top = -200 + value * 6 + 'px';
+    ufo.style.top = 300 + value * 1 + 'px';
+    ufo.style.left = 1000 + value * 1 + 'px';
+    ufo.style.height = 100 + value * 2 + 'px';
+  
 
-
-    
   }
 
   if (value <=90){
@@ -123,10 +143,15 @@ window.addEventListener('scroll', (e) => {
    
   if (value >= 100){
     fire.style.opacity = 1 - (value - 100) / 100;
-   
+    text1.style.display = 'block';
+    text2.style.display = 'block';
+    enter.style.display = 'none';
+    scroll.style.display = 'none';
+
     
-    
-    
+  }else{
+    text1.style.display = 'none';
+text2.style.display = 'none';
   }
 
   
