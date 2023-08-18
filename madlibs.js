@@ -99,6 +99,9 @@ const wish = document.getElementById('wish')
 const text1 = document.getElementById('text1')
 const text2 = document.getElementById('text2')
 const ufo = document.getElementById('ufo')
+const astros = document.getElementsByClassName('astro');
+
+
 fire.style.top = '220px';
 ship.style.top = '0px';
 fire.style.opacity = '100';
@@ -114,6 +117,11 @@ text1.style.display = 'none';
 text2.style.display = 'none';
 enter.style.display = 'block';
 scroll.style.display = 'block';
+Array.from(astros).forEach(astro => {
+  astro.style.display = 'none';
+})
+
+
 
 
 
@@ -132,14 +140,13 @@ window.addEventListener('scroll', (e) => {
     ufo.style.top = 300 + value * 1 + 'px';
     ufo.style.left = 1000 + value * 1 + 'px';
     ufo.style.height = 100 + value * 2 + 'px';
+    planet.style.width =  100 - value / 3 + '%';
+    planet.style.top = 350 + value * 2 + 'px';
+
   
 
   }
 
-  if (value <=90){
-    planet.style.width =  100 - value / 3 + '%';
-    planet.style.top = 350 + value * 2 + 'px';
-  }
    
   if (value >= 100){
     fire.style.opacity = 1 - (value - 100) / 100;
@@ -148,11 +155,30 @@ window.addEventListener('scroll', (e) => {
     enter.style.display = 'none';
     scroll.style.display = 'none';
 
+    ship.style.top = '480.8px';
+    fire.style.top = '712.8px';
+    planet.style.left = '240px';
+    wish.style.left = '67.2px';
+    wish.style.top = '332.8px';
+    ufo.style.top = '387.2px';
+    ufo.style.left = '1087.2px';
+    ufo.style.height = '274.4px';
+    planet.style.width =  '70.4%';
+    planet.style.top = '524.4px';
+    Array.from(astros).forEach(astro => {
+      astro.style.display = 'block';
+    })
+
     
   }else{
     text1.style.display = 'none';
 text2.style.display = 'none';
+Array.from(astros).forEach(astro => {
+  astro.style.display = 'none';
+});
   }
+
+console.log(value);
 
   
 });
