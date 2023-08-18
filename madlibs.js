@@ -55,7 +55,8 @@ function parseStory(rawStory) {
  */
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
-
+  
+  document.addEventListener('DOMContentLoaded', () => {
   const edit = document.querySelector('.madLibsEdit');
   const preview = document.querySelector('.madLibsPreview');
 
@@ -91,25 +92,39 @@ getRawStory().then(parseStory).then((processedStory) => {
 
 const ship = document.getElementById('spaceShip');
 const fire = document.getElementById('fire');
+const planet = document.getElementById('planet');
+const enter = document.getElementById('enter')
 fire.style.top = '220px';
 ship.style.top = '0px';
 fire.style.opacity = '100';
+planet.style.width = '100%';
+planet.style.top = '350px';
+planet.style.paddingLeft = '60px';
+
+
 
 
 window.addEventListener('scroll', (e) => {
   let value = window.scrollY;
-  console.log(value);
-  if (value <= 179){
-    ship.style.top = value * 4 + 'px';
-    fire.style.top = 220 + value * 4 + 'px';
-   
+
+  if (value <= 90){
+    ship.style.top = value * 5.5 + 'px';
+    fire.style.top = 220 + value * 5.5 + 'px';
+    planet.style.left = 60 + value * 2 + 'px';
+
+
     
   }
 
-  
+  if (value <=90){
+    planet.style.width =  100 - value / 3 + '%';
+    planet.style.top = 350 + value * 2 + 'px';
+  }
    
   if (value >= 100){
     fire.style.opacity = 1 - (value - 100) / 100;
+   
+    
     
     
   }
@@ -137,7 +152,7 @@ const stopMusicButton = document.getElementById("stopMusic");
 
 // we set the edit and preview and the title to be hidden, and will be diwplayed after hitting enter
 const container = document.getElementById('container')
-const enter = document.getElementById('enter')
+
 
 enter.addEventListener("click", ()=>{
   container.classList.toggle('none')
@@ -145,3 +160,5 @@ enter.addEventListener("click", ()=>{
   enter.classList.toggle('none')
   document.querySelector('.scroll').classList.toggle('none')
 })
+
+});
