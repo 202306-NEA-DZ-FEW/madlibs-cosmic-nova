@@ -28,12 +28,6 @@ display: none;
 
 
 
-.madLibsEdit{
-position: absolute;
-}
-.madLibsPreview{
-position: absolute;
-}
 
 .Group{
 position: absolute;
@@ -42,6 +36,7 @@ height: 100vh;
 top: 0;
 left: 0;
 object-fit: cover;
+z-index: -1;
 }
 
 /* .img2{
@@ -319,6 +314,52 @@ div.herotext{
   display: flex;
   justify-content: center; 
   align-items: center; 
+}
+
+.madLibsEdit, .madLibsPreview {
+
+  z-index: 400;
+  position: absolute;
+ 
+ 
+
+
+}
+
+#container{
+  z-index: 400;
+
+  display: flex;
+  flex-direction: row;
+
+  
+}
+
+.madLibsPreview {
+
+  top: 900px;
+  left:59%;
+  width:25%;
+  text-align: center;
+
+  
+
+
+}
+.madLibsEdit {
+  top: 900px;
+  left: 18%;
+  width: 25%; 
+  text-align: center;
+}
+
+input{
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  width: 20%;
+  margin-bottom: 5px;
 }
 
 #text2{
