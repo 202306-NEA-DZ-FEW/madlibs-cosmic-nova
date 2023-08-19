@@ -11,29 +11,6 @@
 }
 
 
-
-/*  html, body {
-  scroll-behavior: smooth;
-} 
-
-
- body{
-  height: 100vh;
-  background-color: #1A67B3;
-  overflow: hidden;
-  background-image:  url('./images/stars.svg'), url('./images/bg.svg') ;
-  background-repeat: no-repeat, no-repeat;
-  animation: animateBg 60s linear infinite;
- }
- @keyframes animateBg {
-  0% {background-position: 0 0, 100% 0}
-  50% {background-position: 100% 0, 200% 0}
-  100% {background-position: 0 0, 100% 0} 
-}
- 
- audio {
-  display: none; */
-
 html, body {
 scroll-behavior: smooth;
 }
@@ -42,38 +19,11 @@ scroll-behavior: smooth;
 body{
 background-color: #1A67B3;
 overflow-x: hidden;
-
 }
 
 audio {
 display: none;
 }
-
-/*  .cosmicPlanet{
-  width: 1200px;
-  height: 1200px;
- aspect-ratio: 1/1;
-  position: absolute;
-  bottom: calc(-100% - 220px);
-  left: calc(50% - 600px);
-  align-content: center;
-  
-  animation: spin 150s linear infinite;
-  display: block;
-  mix-blend-mode:screen;
-  z-index: -2;
-  margin: auto;
-}
-#wish{
-  animation: falling 4s linear infinite;
-}
-@keyframes falling {
-  100%{
-    transform: translateX(-50vw) translateY(100vh);
-    
-  }
-} */
-
 
 
 
@@ -88,7 +38,6 @@ left: 0;
 object-fit: cover;
 z-index: -1;
 }
-
 
 /* .img2{
 position: absolute;
@@ -111,27 +60,6 @@ z-index: 3;
 
 }
 
- 
-/*  @keyframes spin{
-    100% { transform: rotate(360deg); }
- }
- .spaceShip {
-   width: 200px;
-
-   aspect-ratio: 9/16;
-   position: absolute;
-   top: -60px;
-   left: calc(50% - 100px);
- }
- .fire {
-   width: 200px;
-   height: auto;
-   position: absolute;
-   top: 200px;
-   left: calc(50% - 100px);
-   transform: rotate(180deg);
- } */
-
 
 @keyframes spin{
   100% { transform: rotate(360deg); }
@@ -151,38 +79,9 @@ width: 120%;
 animation: twinkling 30s linear infinite;
 
 }
-#hero-title{
-  opacity: 0;
-  color: white;
-  margin: 50px auto;
-  font-size: 30px;
-  text-align: center;
-  font-weight: 300;
-}
-#hero-title *{
-  text-shadow: 0 0 5px #ddd5f5, 0 0 25px #ddd5f5, 0 0 50px #ddd5f5, 0 0 100px #ddd5f5, 0 0 200px #ddd5f5;
-  -webkit-text-stroke: 1px white;
-  color: rgba(0, 0, 0, 0);
-  animation: flicker 3s linear infinite;
-
-/* }
-@keyframes flicker {
-  0% {
-    text-shadow: 0 0 5px #ddd5f5, 0 0 25px #ddd5f5, 0 0 50px #ddd5f5, 0 0 100px #ddd5f5, 0 0 150px #ddd5f5;
-  }
-  50% {
-    text-shadow: 0 0 15px #ddd5f5, 0 0 35px #ddd5f5, 0 0 60px #ddd5f5, 0 0 120px #ddd5f5, 0 0 170px #ddd5f5;
-  }
-  100% {
-    text-shadow: 00 0 20px #ddd5f5, 0 0 45px #ddd5f5, 0 0 70px #ddd5f5, 0 0 130px #ddd5f5, 0 0 190px #ddd5f5;
-  }
-}
-.spaceShip, .fire {
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; */
 
 .spaceShip, .fire, .planet {
 transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-
 }
 
 #wish{
@@ -277,10 +176,8 @@ display: none;
 
 #astro1 ,#astro2 ,#astro3 ,#astro4 ,#astro5 ,#astro6,#circle{
   position: absolute;
-
   z-index: 3;
   display: none;
-
   
 }
 
@@ -323,10 +220,8 @@ width: 11.5%;
 
 .spaceShip{
   position: absolute;
-
   width: 13%;
   z-index: 50;
-
 }
 
 .fire {
@@ -351,13 +246,6 @@ div.cosmicplanet1{
  
 } */
 
-/* @keyframes rotateUFO {
-  0% {
-    transform: rotate(0deg) translateX(100px) scale(1); 
-  }
-  100% {
-    transform: rotate(30deg) translateX(500px) scale(3);  */
-
 .cosmicPlanet{
   width: 100%;
   
@@ -370,7 +258,6 @@ div.cosmicplanet1{
   display: block;
   mix-blend-mode:screen;
   z-index: 2;
-
   }
   
 
@@ -415,13 +302,6 @@ div.buttons{
 
 .generate{
   position: absolute;
-
-/*   top: 300px;
-  right: 200px;
-  left: 1200px;
-  animation: rotateUFO 10s linear infinite;
-  z-index: 0; */
-
   width: 7%;
   height: 40px;
   border:#4006f3 2px solid ;
@@ -432,7 +312,6 @@ div.buttons{
   margin-top: -10%;
   
   }
-
 
 .clear{
   position: absolute;
@@ -483,190 +362,6 @@ div.herotext{
 .madLibsPreview {
  
   
-/*  
-  .on {
-  display: block;
- }
- .off {
-  display: none;
- }
- button {
-  border-radius: 0 25px;
-  border: 1px solid #4006f3;
- }
-
-.container{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 95%;
-  margin: auto;
-  height: 95%;
-
-  border-radius: 0 25px;
-  position: relative;
-  background: rgba(8, 0, 0, 0.5);
-  box-shadow: 0 0 5px #ddd5f5;
-  padding: 1rem;
-  gap: 1rem;
-  transition: all ease 2s;
-  z-index: 100;
-}
-.inputWord{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-    gap: 1rem;
-    width: 80%;
-}
-.inputWord input{
-  height: 2rem;
-  background: rgba(255, 255, 255, 0.5);
-  border: 2px solid white;
-  width: 70%;
-  font-size: 18px;
-}
- .none{
-  display: none;
- }
- .madLibsEdit, .madLibsPreview{
-  
-  height: 95%;
-  color: white;
-    font-size: 18px;
-    font-weight: 500;
-    border: 2px solid white;
-    padding: .75rem;
- }
- .madLibsPreview{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
- }
- .madLibsEdit form{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
- }
- #storyPreview{
-  letter-spacing: 2px;
-  line-height: 32px;
- }
- #storyPreview p{
-  margin: auto 0;
-  color: white;
-  transition: all 50s ease-in-out;
- }
- .transparent{
-  color: transparent;
- }
- .hiddenWord{
-  background: rgba(255, 255, 255, 0.5);
-  color: black;
- }
- .shipStyle{
-  width: 120px;
-  height: 500px;
-  aspect-ratio: 9/16;
-  position: absolute;
-  top: 50px;
-  left: calc(50% - 60px);
-  z-index: 1;
-  top: 10px;
-  z-index: 0;
-  transition: all ease-in 2s;
-  
- }
- @keyframes orbit {
-  0% {
-    transform: translate(300px) rotate(0deg);
-  }
-  25% {
-    transform: translateX(0px) translateY(-300px) rotate(-90deg);
-  }
-  50% {
-    transform: translateY(-300px) translateX(0px) rotate(180deg);
-  }
-  75% {
-    transform: translateX(-300px) translateY(0px) rotate(-90deg);
-  }
-  100% {
-    transform: translateY(300px) translateX(0px) rotate(0deg);
-  }
- }
- .planetStyle{
-  width: 800px;
-  height: 800px;
- aspect-ratio: 1/1;
-  position: absolute;
-  bottom: calc(50% - 400px);
-  left: calc(50% - 400px);
-  align-content: center;
-  
-  animation: spin 150s linear infinite;
-  display: block;
-  mix-blend-mode:screen;
-  z-index: -2;
-  margin: auto;
-  transition: all ease-in 2s;
- }
- .revealBtn{
-  height: 4rem;
-  width: 40%;
-  background: transparent;
-  box-shadow:0 0 5px #ddd5f5, 0 0 25px #ddd5f5, 0 0 50px #ddd5f5, 0 0 100px #ddd5f5, 0 0 200px #ddd5f5;
-  border: none;
-
-  margin: auto;
-  display: block;
-  font-size: 22px;
-
-  -webkit-text-stroke: 1px white;
-  color: rgba(0, 0, 0, 0);
-  animation: flicker 3s linear infinite;
- }
- .divBtn{
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-direction: row;
-  align-items: center;
- }
- .astro{
-  width: 100px;
-  height: 200px;
-  position: absolute;
-  transition: all 20s ease-in-out ;
- }
- #astro1{
-  left: calc(50% - 340px);
-  top: calc(50% - 250px);
- }
- #astro2{
-  left: calc(50% - 240px);
-  top: calc(50% - 320px);
- }
- #astro3{
-  left: calc(50% - 140px);
-  top: calc(50% - 390px);
- }
- #astro4{
-  left: calc(50% + 60px);
-  top: calc(50% - 390px);
- }
- #astro5{
-  left: calc(50% + 150px);
-  top: calc(50% - 320px);
- }
- #astro6{
-  left: calc(50% + 240px);
-  top: calc(50% - 250px);
- } */
-
 
   left:57.5%;
   width:25%;
