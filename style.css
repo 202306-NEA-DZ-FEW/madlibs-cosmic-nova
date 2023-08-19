@@ -5,15 +5,16 @@
  
  */
  *{
-    font-family: "Audiowide", sans-serif;
+  font-family: "Audiowide", sans-serif;
 
 
- }
+}
 
 
- /* html, body {
+
+/*  html, body {
   scroll-behavior: smooth;
-} */
+} 
 
 
  body{
@@ -31,11 +32,24 @@
 }
  
  audio {
-  display: none;
+  display: none; */
+
+html, body {
+scroll-behavior: smooth;
 }
 
 
- .cosmicPlanet{
+body{
+background-color: #1A67B3;
+overflow-x: hidden;
+
+}
+
+audio {
+display: none;
+}
+
+/*  .cosmicPlanet{
   width: 1200px;
   height: 1200px;
  aspect-ratio: 1/1;
@@ -43,7 +57,7 @@
   bottom: calc(-100% - 220px);
   left: calc(50% - 600px);
   align-content: center;
-  /* padding-left: 20px; */
+  
   animation: spin 150s linear infinite;
   display: block;
   mix-blend-mode:screen;
@@ -58,57 +72,56 @@
     transform: translateX(-50vw) translateY(100vh);
     
   }
-}
-/* .madLibsEdit{
-  position: absolute;
-}
-.madLibsPreview{
-  position: absolute;
 } */
 
- .Group{
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  object-fit: cover;
- }
 
- /* .img2{
-  position: absolute;
-  width: 100%;
-  height: 150vh;
-  top: 750px;
-  height: 150vh;
-  top: 750px;
-  left: 0;
-  object-fit: cover;
-  
-  z-index: 3;
- } */
 
- @keyframes twinkling {
 
-  50% {
-    transform: translateX(100px);
-  }
+
+
+.Group{
+position: absolute;
+width: 105%;
+height: 100vh;
+top: 0;
+left: 0;
+object-fit: cover;
+z-index: -1;
+}
+
+
+/* .img2{
+position: absolute;
+width: 100%;
+height: 150vh;
+top: 750px;
+height: 150vh;
+top: 750px;
+left: 0;
+object-fit: cover;
+
+z-index: 3;
+} */
+
+@keyframes twinkling {
+
+50% {
+  transform: translateX(100px);
+}
 
 }
 
  
- @keyframes spin{
+/*  @keyframes spin{
     100% { transform: rotate(360deg); }
  }
  .spaceShip {
    width: 200px;
 
-   /* height: auto; */
    aspect-ratio: 9/16;
    position: absolute;
    top: -60px;
    left: calc(50% - 100px);
-   /* z-index: 50; */
  }
  .fire {
    width: 200px;
@@ -116,20 +129,26 @@
    position: absolute;
    top: 200px;
    left: calc(50% - 100px);
-   /* z-index: 49; */
    transform: rotate(180deg);
- }
+ } */
+
+
+@keyframes spin{
+  100% { transform: rotate(360deg); }
+}
+
+
 .stars{
-  position: absolute;
-  width: 120%;
-  animation: twinkling 30s linear infinite;
+position: absolute;
+width: 120%;
+animation: twinkling 30s linear infinite;
 
 }
 .stars2{
-  position: absolute;
-  top : 900px;
-  width: 120%;
-  animation: twinkling 30s linear infinite;
+position: absolute;
+top : 900px;
+width: 120%;
+animation: twinkling 30s linear infinite;
 
 }
 #hero-title{
@@ -146,7 +165,7 @@
   color: rgba(0, 0, 0, 0);
   animation: flicker 3s linear infinite;
 
-}
+/* }
 @keyframes flicker {
   0% {
     text-shadow: 0 0 5px #ddd5f5, 0 0 25px #ddd5f5, 0 0 50px #ddd5f5, 0 0 100px #ddd5f5, 0 0 150px #ddd5f5;
@@ -159,96 +178,313 @@
   }
 }
 .spaceShip, .fire {
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; */
+
+.spaceShip, .fire, .planet {
+transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
 }
 
 #wish{
-  position: absolute;
-  mix-blend-mode: screen;
-  left: 300px;
-  top: -200px;
-  
+position: absolute;
+mix-blend-mode: screen;
+left: 600px;
+top: -200px;
+
 }
 
-#text1{
-  position: absolute;
-  top: 350px;
-  left: 300px;;
-  display: none;
+/* #text1{
+position: absolute;
+top: 350px;
+left: 600px;
+display: flex;
+justify-content: center; 
+align-items: center; 
+border:black 5px solid ;
+
 }
 
 #text2{
-  position: absolute;
-  top: 250px;
-  left: 340px;
-  height: 13%;
-  display: none;
-}
+position: absolute;
+top: 250px;
+left: 340px;
+height: 13%;
+border:black 5px solid ;
+
+} */
 
 @keyframes rotateUFO {
+0% {
+  transform: rotate(0deg); 
+}
+100% {
+  transform: rotate(30deg); 
+}
+}
+
+#ufo{
+position: absolute;
+top: 300px;
+left: 1000px;
+height: 100px;
+animation: rotateUFO 10s linear infinite;
+
+}
+
+
+
+
+.press,.scroll {
+
+  filter: drop-shadow(0 px 5px #4006f3) drop-shadow(0 px 25px #4006f3);
+}
+
+.press:hover, .scroll:hover, .speakers:hover {   
+  filter: drop-shadow(0 5px 5px #4006f3) drop-shadow(0 25px 25px #4006f3)
+  drop-shadow(0 25px 150px #4006f3);
+  filter: drop-shadow(0 5px 5px #4006f3) drop-shadow(0 25px 25px #4006f3)
+  drop-shadow(0 25px 150px #4006f3);
+
+} 
+.speakers {
+position:absolute;
+right: 45px;
+top: 45px;
+width: 50px;
+height: 50px;
+background: transparent;
+color: white;
+font-size: 28px;
+
+}
+
+.on {
+display: block;
+}
+.off {
+display: none;
+}
+button {
+border-radius: 5px;
+border: 1px solid #4006f3;
+}
+
+
+.none{
+display: none;
+}
+
+
+#astro1 ,#astro2 ,#astro3 ,#astro4 ,#astro5 ,#astro6,#circle{
+  position: absolute;
+
+  z-index: 3;
+  display: none;
+
+  
+}
+
+#astro1{
+top: 90%;
+left: 23%;
+width: 11.5%;
+}
+#astro2{
+  top: 82%;
+  left: 29%;
+  width: 11.5%;
+}
+#astro3{
+  top: 78%;
+  left: 35%;
+  width: 11.5%;
+}
+#astro4{
+  top: 78%;
+  left: 55%;
+  width: 10%;
+}
+#astro5{
+  top: 80%;
+  left: 60%;
+  width: 11.5%;
+}
+#astro6{
+  top: 88%;
+  left: 66%;
+  width: 11.5%;
+}
+#circle{
+  top: 89%;
+  left: 45.2%;
+  width: 9.5%;
+} 
+/* ------ css mohamed --------- */
+
+.spaceShip{
+  position: absolute;
+
+  width: 13%;
+  z-index: 50;
+
+}
+
+.fire {
+  width: 13%;
+  position: absolute;
+  z-index: 49;
+  transform: rotate(180deg);
+  
+ }
+
+div.spaceship1{
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
+}
+/* 
+div.cosmicplanet1{
+  position: absolute;
+  display: block;
+  justify-content: center; 
+  align-items: center; 
+ 
+} */
+
+/* @keyframes rotateUFO {
   0% {
     transform: rotate(0deg) translateX(100px) scale(1); 
   }
   100% {
-    transform: rotate(30deg) translateX(500px) scale(3); 
+    transform: rotate(30deg) translateX(500px) scale(3);  */
+
+.cosmicPlanet{
+  width: 100%;
+  
+  position: absolute;
+  bottom: -140%;
+  align-content: center;
+ 
+  
+  animation: spin 150s linear infinite;
+  display: block;
+  mix-blend-mode:screen;
+  z-index: 2;
+
   }
+  
+
+  .press{
+    position: absolute;
+    z-index: 20;
+    height: 15%;
+    margin-top: 50%;
+    position: fixed;
+    bottom: 0.5em;
+    left: 5%; 
+    transform: translateX(-40%);
+    }
+
+.scroll{
+    position: absolute;
+    z-index: 20;
+    height: 15%;
+    margin-top: 50%;
+    position: fixed;
+    bottom: 0.5em;
+    right: 5%; 
+    transform: translateX(40%);
+      }
+
+.formplace{
+  width: 80%;
+  margin-top: -10%;
+  padding: 0;
+  z-index: 4; 
+  
 }
 
-#ufo{
+div.buttons{
+  margin-top: 35%;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  z-index: 5;
+  
+}
+
+.generate{
   position: absolute;
-  top: 300px;
+
+/*   top: 300px;
   right: 200px;
   left: 1200px;
   animation: rotateUFO 10s linear infinite;
-  z-index: 0;
+  z-index: 0; */
 
-}
+  width: 7%;
+  height: 40px;
+  border:#4006f3 2px solid ;
+  margin-right: 0.5%;
+  font-size: 80%;
+  color: #4006f3;
+  z-index: 5;
+  margin-top: -10%;
+  
+  }
 
-.press{
-  left: 70px;
-  bottom: 50px;
-  z-index: 20;
-  position: absolute; 
-  left: 70px;
-  bottom: 50px;
-  z-index: 20;
-  position: absolute; 
-}
-.scroll{
+
+.clear{
   position: absolute;
-  left: 1350px;
-  bottom: 50px;
-  z-index: 9;
-  left: 1350px;
-  bottom: 50px;
-  z-index: 9;
+  width: 7%;
+  height: 40px;
+  border:red 2px solid ;
+  margin-right: 0.5%;
+  font-size: 80%;
+  margin-top: 15%;
+  color: red;
+  z-index: 5;
+  left: 66%;
+ 
+} 
+
+div.herotext{
+  position: relative;
+  height: 400px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
 }
 
-.press,.scroll {
-  
-    filter: drop-shadow(0 px 5px #4006f3) drop-shadow(0 px 25px #4006f3);
- }
- 
-  .press:hover, .scroll:hover, .speakers:hover{   
-    filter: drop-shadow(0 5px 5px #4006f3) drop-shadow(0 25px 25px #4006f3)
-    drop-shadow(0 25px 150px #4006f3);
-    filter: drop-shadow(0 5px 5px #4006f3) drop-shadow(0 25px 25px #4006f3)
-    drop-shadow(0 25px 150px #4006f3);
-  
- } 
- .speakers {
-  position:absolute;
-  right: 45px;
-  top: 45px;
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  color: white;
-  font-size: 28px;
+.madLibsEdit, .madLibsPreview {
 
- }
+  z-index: 400;
+  position: absolute;
+  margin-top: 31%;
+  font-size: 110%; 
   
- .on {
+ 
+ 
+
+
+}
+
+#container{
+  z-index: 400;
+  display: flex;
+  flex-direction: row;
+
+  
+ 
+
+  
+}
+
+.madLibsPreview {
+ 
+  
+/*  
+  .on {
   display: block;
  }
  .off {
@@ -265,7 +501,7 @@
   width: 95%;
   margin: auto;
   height: 95%;
-  /* border: 2px solid white; */
+
   border-radius: 0 25px;
   position: relative;
   background: rgba(8, 0, 0, 0.5);
@@ -343,7 +579,7 @@
   top: 10px;
   z-index: 0;
   transition: all ease-in 2s;
-  /* animation: orbit 10s linear infinite; */
+  
  }
  @keyframes orbit {
   0% {
@@ -370,7 +606,7 @@
   bottom: calc(50% - 400px);
   left: calc(50% - 400px);
   align-content: center;
-  /* padding-left: 20px; */
+  
   animation: spin 150s linear infinite;
   display: block;
   mix-blend-mode:screen;
@@ -384,11 +620,11 @@
   background: transparent;
   box-shadow:0 0 5px #ddd5f5, 0 0 25px #ddd5f5, 0 0 50px #ddd5f5, 0 0 100px #ddd5f5, 0 0 200px #ddd5f5;
   border: none;
-  /* animation: flicker 3s linear infinite; */
+
   margin: auto;
   display: block;
   font-size: 22px;
-/* text-shadow:  */
+
   -webkit-text-stroke: 1px white;
   color: rgba(0, 0, 0, 0);
   animation: flicker 3s linear infinite;
@@ -429,4 +665,42 @@
  #astro6{
   left: calc(50% + 240px);
   top: calc(50% - 250px);
- }
+ } */
+
+
+  left:57.5%;
+  width:25%;
+  text-align: center;
+
+  
+
+
+}
+.madLibsEdit {
+
+  left: 17%;
+  width: 25%; 
+  text-align: center;
+
+}
+
+input{
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 20%;
+  font-size: 50%;
+ 
+}
+
+#text2{
+  width: 70%;
+  margin-top: 10%;
+  position: absolute;
+}
+
+#text1{
+  width: 30%;
+  margin-top: 30%;
+  position: absolute;
+}

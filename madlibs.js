@@ -29,7 +29,7 @@
 
 
 function parseStory(rawStory) {
-  console.log(rawStory);
+
   const words = rawStory.split(/\s/);
   const obj = [];
 
@@ -141,99 +141,206 @@ function moveAround(e){
 }
 
 getRawStory().then(parseStory).then((processedStory) => {
-  console.log(processedStory);
-  const edit = document.querySelector('.madLibsEdit');
-  const preview = document.querySelector('.madLibsPreview');
-  const editForm = document.createElement('form')
-  edit.appendChild(editForm)
-  const reseter = document.createElement(('button'))
-  reseter.className='reset revealBtn'
-  reseter.id='reseter'
-  reseter.textContent='RESET'
+
+//   console.log(processedStory);
+//   const edit = document.querySelector('.madLibsEdit');
+//   const preview = document.querySelector('.madLibsPreview');
+//   const editForm = document.createElement('form')
+//   edit.appendChild(editForm)
+//   const reseter = document.createElement(('button'))
+//   reseter.className='reset revealBtn'
+//   reseter.id='reseter'
+//   reseter.textContent='RESET'
  
   
-  const story = document.createElement('p') //the element that will hold the story
-  story.id='storyPreview'
-  story.textContent=""
-  story.className='transparent'
-  preview.appendChild(story) // we append it to the prewien div
-  const divBtn = document.createElement('div')
-  preview.appendChild(divBtn)
-  divBtn.className= 'divBtn'
-  const reveal = document.createElement('button')
-  divBtn.appendChild(reveal)
-  reveal.className= 'revealBtn'
-  reveal.id= 'reveal'
-  reveal.textContent= 'REVEAL TEXT'
-  divBtn.appendChild(reseter)
-  processedStory.forEach((wordObj, id)=> { // we will add word by word to create the story
-    //const storyContent = story.textContent // we save the current content of the story 
-    if(!wordObj.pos){ //we check if it will be hiddne or visible 
-      story.append(`${wordObj.word} `)    //in case visible we add it to the content
-    }else{ // in case hidden we will put it in span and append it to the story
-      const span = document.createElement('span')
-      span.className= 'hiddenWord'
-      span.id= `hidden${id}`
-      span.textContent= `____[${wordObj.pos}]____ `
-      story.appendChild(span)
-    }
-  })
-  processedStory.forEach((wordObj,id)=> {console.log(wordObj,id)
-    if(wordObj.pos){ //we check if it a hidden word
-      const div = document.createElement('div') //the div that will hold the inut and label
-      const label= document.createElement('label')
-      label.setAttribute('for', `hidden${id}`)
-      label.textContent=`[${wordObj.pos}]`
-      div.appendChild(label)
-      const input= document.createElement('input')
-      input.className=`hidden${id}`
-      div.appendChild(input)
-      div.className='inputWord'
-      editForm.appendChild(div)// we add it to the edit Div
-      input.addEventListener('input', changeText)
-      input.addEventListener('change', changeText)
-    } 
+//   const story = document.createElement('p') //the element that will hold the story
+//   story.id='storyPreview'
+//   story.textContent=""
+//   story.className='transparent'
+//   preview.appendChild(story) // we append it to the prewien div
+//   const divBtn = document.createElement('div')
+//   preview.appendChild(divBtn)
+//   divBtn.className= 'divBtn'
+//   const reveal = document.createElement('button')
+//   divBtn.appendChild(reveal)
+//   reveal.className= 'revealBtn'
+//   reveal.id= 'reveal'
+//   reveal.textContent= 'REVEAL TEXT'
+//   divBtn.appendChild(reseter)
+//   processedStory.forEach((wordObj, id)=> { // we will add word by word to create the story
+//     //const storyContent = story.textContent // we save the current content of the story 
+//     if(!wordObj.pos){ //we check if it will be hiddne or visible 
+//       story.append(`${wordObj.word} `)    //in case visible we add it to the content
+//     }else{ // in case hidden we will put it in span and append it to the story
+//       const span = document.createElement('span')
+//       span.className= 'hiddenWord'
+//       span.id= `hidden${id}`
+//       span.textContent= `____[${wordObj.pos}]____ `
+//       story.appendChild(span)
+//     }
+//   })
+//   processedStory.forEach((wordObj,id)=> {console.log(wordObj,id)
+//     if(wordObj.pos){ //we check if it a hidden word
+//       const div = document.createElement('div') //the div that will hold the inut and label
+//       const label= document.createElement('label')
+//       label.setAttribute('for', `hidden${id}`)
+//       label.textContent=`[${wordObj.pos}]`
+//       div.appendChild(label)
+//       const input= document.createElement('input')
+//       input.className=`hidden${id}`
+//       div.appendChild(input)
+//       div.className='inputWord'
+//       editForm.appendChild(div)// we add it to the edit Div
+//       input.addEventListener('input', changeText)
+//       input.addEventListener('change', changeText)
+//     } 
     
-  })
+//   })
+
+  const editView = document.querySelector('.madLibsEdit');
+  const previewView = document.querySelector('.madLibsPreview');
+
+  const updatePreview = () => {
+    previewView.innerHTML = '';
+    let textContent = ''; 
+  
+    processedStory.forEach((word) => {
+      if (word.pos) {
+        const input = editView.querySelector(`input[data-pos="${word.pos}"]`);
+        textContent += ' ' + input.value || ` [${word.pos}]`;
+      } else {
+        
+         textContent += ' ' + word.word + ' '; 
+         
+      }
+    });
+  
+    const combinedText = document.createTextNode(textContent);
+    previewView.appendChild(combinedText);
+  };
+
+  processedStory.forEach((word) => {
+    if (word.pos) {
+      const input = document.createElement('input');
+      input.setAttribute('data-pos', word.pos);
+      
+      input.addEventListener('input', (event) => {
+        
+        updatePreview();
+      });
+
+      editView.appendChild(input);
+    } else {
+      editView.appendChild(document.createTextNode(word.word + ' ')); 
+    }
+  });
+
+  updatePreview(); 
+
+
+
+
+
 
   
-window.addEventListener('wheel', moveAround );
+
+});
 
 
-/*
+document.addEventListener('DOMContentLoaded', () => {
+
+const ship = document.getElementById('spaceShip');
+const fire = document.getElementById('fire');
+const planet = document.getElementById('planet');
+const enter = document.getElementById('enter');
+const scroll = document.getElementById('scroll');
+const wish = document.getElementById('wish')
+const text1 = document.getElementById('text1')
+const text2 = document.getElementById('text2')
+const ufo = document.getElementById('ufo')
+const astros = document.getElementsByClassName('astro');
+
+
+fire.style.top = '28%';
+ship.style.top = '0.5%';
+fire.style.opacity = '100';
+planet.style.width = '100%';
+planet.style.top = '50%';
+wish.style.left = '70%';
+wish.style.top = '-20%';
+ufo.style.top = '30%';
+ufo.style.left = '70%';
+ufo.style.height = '15%';
+text1.style.display = 'none';
+text2.style.display = 'none';
+enter.style.display = 'block';
+scroll.style.display = 'block';
+Array.from(astros).forEach(astro => {
+  astro.style.display = 'none';
+})
+
+
+
+
+
+
+  
+//window.addEventListener('wheel', moveAround );
+
+
+
 window.addEventListener('scroll', (e) => {
   let value = window.scrollY;
-  console.log(value)
-  // if (value <= 90){
-  //   ship.style.top = value * 5.5 + 'px';
-  //   fire.style.top = 220 + value * 5.5 + 'px';
-  //   // planet.style.left = 20 + value * 2.5 + 'px';
-  //   wish.style.left = 600 - value * 6 + 'px';
-  //   wish.style.top = -200 + value * 6 + 'px';
-  //   ufo.style.top = 300 + value * 1 + 'px';
-  //   ufo.style.left = 1000 + value * 1 + 'px';
-  //   ufo.style.height = 100 + value * 2 + 'px';
-  
 
-  // }
 
-  // if (value <=90){
-  //   // planet.style.width =  100 - value / 3 + '%';
-  //   // planet.style.top = 350 + value * 2 + 'px';
-  // }
+  if (value <= 90){
+    ship.style.top = 0.5 + value * 0.7 + '%';
+    fire.style.top = 28 + value * 0.7 + '%';
+    planet.style.left = value * 0.18 + '%';
+    wish.style.left = 70 - value * 0.6 + '%';
+    wish.style.top = -20 + value * 0.6 + '%';
+    ufo.style.top = 30 + value * 0.2 + '%';
+    ufo.style.left = 70 + value * 0.05 + '%';
+    ufo.style.height = 15 + value * 0.3 + '%';
+    planet.style.width =  100 - value / 3 + '%';
+    planet.style.top = 50 + value * 0.2 + '%';
+
+
+
+  }
+
+
    
-//   if (value >= 100){
-//     fire.style.opacity = 1 - (value - 100) / 100;
-//     // text1.style.display = 'block';
-//     // text2.style.display = 'block';
-//     enter.style.display = 'none';
-//     scroll.style.display = 'none';
+  if (value >= 100){
+    fire.style.opacity = 1 - (value - 100) / 100;
+    text1.style.display = 'block';
+    text2.style.display = 'block';
+    enter.style.display = 'none';
+    scroll.style.display = 'none';
+    ship.style.top = '62.1%';
+    fire.style.top = '89.6%';
+    planet.style.left = '16%';
+    wish.style.left = '17.2%';
+    wish.style.top = '32.8%';
+    ufo.style.top = '47.6%';
+    ufo.style.left = '70.4%';
+    ufo.style.height = '41.4%';
+    planet.style.width =  '70.4%';
+    planet.style.top = '524.4px';
+    Array.from(astros).forEach(astro => {
+      astro.style.display = 'block';
+    })
 
     
-//   }else{
-//     text1.style.display = 'none';
-// text2.style.display = 'none';
-//   }
+  }else{
+    text1.style.display = 'none';
+text2.style.display = 'none';
+Array.from(astros).forEach(astro => {
+  astro.style.display = 'none';
+});
+  }
+
+
 
   
 });
@@ -258,6 +365,7 @@ const stopMusicButton = document.getElementById("stopMusic");
 
 // we set the edit and preview and the title to be hidden, and will be diwplayed after hitting enter
 const container = document.getElementById('container')
+const generate = document.getElementById('generate')
 
 const astros = document.getElementsByClassName('astro')
 enter.addEventListener("click", ()=>{
