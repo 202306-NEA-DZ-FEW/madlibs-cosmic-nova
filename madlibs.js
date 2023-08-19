@@ -29,7 +29,7 @@
 
 
 function parseStory(rawStory) {
-  console.log(rawStory);
+
   const words = rawStory.split(/\s/);
   const obj = [];
 
@@ -54,41 +54,80 @@ function parseStory(rawStory) {
  * You'll want to use the results of parseStory() to display the story on the page.
  */
 getRawStory().then(parseStory).then((processedStory) => {
-  console.log(processedStory);
-  
-  document.addEventListener('DOMContentLoaded', () => {
-  const edit = document.querySelector('.madLibsEdit');
-  const preview = document.querySelector('.madLibsPreview');
+  const editView = document.querySelector('.madLibsEdit');
+  const previewView = document.querySelector('.madLibsPreview');
 
-  const story = document.createElement('p') //the element that will hold the story
-  story.id='storyPreview'
-  story.textContent=""
-  preview.appendChild(story) // we append it to the prewien div
-  processedStory.forEach((wordObj)=> { // we will add word by word to create the story
-    const storyContent = story.textContent // we save the current content of the story 
-    if(!wordObj.pos){ //we check if it will be hiddne or visible 
-      story.textContent= `${storyContent} ${wordObj.word} `//in case visible we add it to the content
-    }else{ // in case hidden we will put it in span and append it to the story
-      const span = document.createElement('span')
-      span.textContent= `____[${wordObj.pos}]____`
-      story.appendChild(span)
+  const updatePreview = () => {
+    previewView.innerHTML = '';
+    let textContent = ''; 
+  
+    processedStory.forEach((word) => {
+      if (word.pos) {
+        const input = editView.querySelector(`input[data-pos="${word.pos}"]`);
+        textContent += ' ' + input.value || ` [${word.pos}]`;
+      } else {
+        
+         textContent += ' ' + word.word + ' '; 
+         
+      }
+    });
+  
+    const combinedText = document.createTextNode(textContent);
+    previewView.appendChild(combinedText);
+  };
+
+  processedStory.forEach((word) => {
+    if (word.pos) {
+      const input = document.createElement('input');
+      input.setAttribute('data-pos', word.pos);
+      
+      input.addEventListener('input', (event) => {
+        
+        updatePreview();
+      });
+
+      editView.appendChild(input);
+    } else {
+      editView.appendChild(document.createTextNode(word.word + ' ')); 
     }
-  })
-  processedStory.forEach((wordObj)=> {
-    if(wordObj.pos){ //we check if it a hidden word
-      const div = document.createElement('div') //the div that will hold the inut and label
-      div.innerHTML= `$<label for="">[${wordObj.pos}]</label>
-      <input type="text"  >`
-      edit.appendChild(div)// we add it to the edit Div
-    } 
+  });
+
+  updatePreview(); 
+
+
+
+
+
+
+  // const story = document.createElement('p') //the element that will hold the story
+  // story.id='storyPreview';
+  // story.textContent="";
+  // preview.appendChild(story) // we append it to the prewien div
+  // processedStory.forEach((wordObj)=> { // we will add word by word to create the story
+  //   const storyContent = story.textContent // we save the current content of the story 
+  //   if(!wordObj.pos){ //we check if it will be hiddne or visible 
+  //     story.textContent= `${storyContent} ${wordObj.word} `//in case visible we add it to the content
+  //   }else{ // in case hidden we will put it in span and append it to the story
+  //     const span = document.createElement('span')
+  //     span.textContent= `____[${wordObj.pos}]____`
+  //     story.appendChild(span)
+  //   }
+  // })
+  // processedStory.forEach((wordObj)=> {
+  //   if(wordObj.pos){ //we check if it a hidden word
+  //     const div = document.createElement('div') //the div that will hold the inut and label
+  //     div.innerHTML= `$<label for="">[${wordObj.pos}]</label>
+  //     <input type="text"  >`
+  //     edit.appendChild(div)// we add it to the edit Div
+  //   } 
     
-  })
+  // })
   
 
 });
 
 
-
+document.addEventListener('DOMContentLoaded', () => {
 
 const ship = document.getElementById('spaceShip');
 const fire = document.getElementById('fire');
@@ -178,7 +217,7 @@ Array.from(astros).forEach(astro => {
 });
   }
 
-console.log(value);
+
 
   
 });
@@ -203,13 +242,13 @@ const stopMusicButton = document.getElementById("stopMusic");
 
 // we set the edit and preview and the title to be hidden, and will be diwplayed after hitting enter
 const container = document.getElementById('container')
+const generate = document.getElementById('generate')
 
 
-enter.addEventListener("click", ()=>{
-  container.classList.toggle('none')
-  document.getElementById('hero-title').classList.toggle('none')
-  enter.classList.toggle('none')
-  document.querySelector('.scroll').classList.toggle('none')
-})
+// generate.addEventListener("click", ()=>{
+//   editView.classList.toggle('none')
+//   document.getElementById('hero-title').classList.toggle('none')
+//   document.querySelector('.scroll').classList.toggle('none')
+// })
 
 });
