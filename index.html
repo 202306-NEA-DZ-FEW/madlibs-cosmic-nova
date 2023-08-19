@@ -8,51 +8,47 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="page1">
-    <img src="./images/spaceship.svg" class="spaceShip" id="spaceShip" alt="">
-    <img src="./images/cosmic.svg"  class="cosmicPlanet" id = "planet" alt="">
-    <img src="./images/enter.svg" class="press" id="enter" alt=""> 
-    <img src="./images/scroll.svg" class="scroll" id="scroll" alt=""> 
-    <img src="./images/bg.svg" class="Group" alt=""> 
-    <img src="./images/stars.svg" class="stars" alt=""> 
-    <img src="./images/stars.svg" class="stars2" alt=""> 
-    <img src="./images/text1.svg" id="text1" alt=""> 
-    <img src="./images/text2.svg" id="text2" alt=""> 
-    <img src="./images/wish star.svg" id="wish" alt=""> 
-    <img src="./images/UFO.svg" id="ufo" alt=""> 
-    <img src="./images/fire2.gif" class="fire" id="fire" alt=""> 
     
+      <audio id="backgroundMusic" controls autoplay loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <button id="startMusic"  class="speakers">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+      <button id="stopMusic" class="speakers off">
+        <i class="fa-solid fa-volume-xmark"></i>
+      </button>
+      <img src="./images/fire2.gif" class="fire" id="fire" alt="">
+      <img src="./images/spaceship.svg" class="spaceShip" id="spaceShip" alt="">
+      <img src="./images/cosmic.svg"  class="cosmicPlanet" id = "planet" alt="">
+      <img src="./images/enter.svg" class="press" id="enter" alt=""> 
+      <img src="./images/scroll.svg" class="scroll" id="scroll" alt=""> 
+      <!-- <img src="./images/bg.svg" class="Group" alt="">  -->
+      <!-- <img src="./images/stars.svg" class="stars" alt="">  -->
+      <!-- <img src="./images/stars.svg" class="stars2" alt="">  -->
+      <!-- <img src="./images/text1.svg" id="text1" alt=""> 
+      <img src="./images/text2.svg" id="text2" alt="">  -->
+      <img src="./images/wish star.svg" id="wish" alt=""> 
+      <img src="./images/UFO.svg" id="ufo" alt="">  
     
 
-    <audio id="backgroundMusic" controls autoplay loop>
-      <source src="background-music.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-  </audio>
-
-  <div id="hero-title" class="none">
-    <h1 class="galaxy-title">Galactic Giggles on Cosmic Nova</h1>
-  <h2 class="shoot">SHOOT AWAY</h2>
-  </div>
+      <div id="hero-title">
+        <h1 class="galaxy-title">Galactic Giggles on Cosmic Nova</h1>
+        <h2 class="shoot">SHOOT AWAY</h2>
+      </div>
     
    
-    <button id="startMusic"  class="speakers">
-      <i class="fa-solid fa-volume-high"></i>
-    </button>
-    <button id="stopMusic" class="speakers off">
-      <i class="fa-solid fa-volume-xmark"></i>
-    </button>
-  </div>
-  <div class="between" ></div>
-    <div class="page2">
-      <!-- <img src="./images/page2.svg" class="img2" alt="">  -->
     
-      <div class="container none" id="container"></div>
   
-    <div class='madLibsEdit'>
-    </div>
-    <div class='madLibsPreview'>
-    </div>
-  </div>
+    
+      <div class="container none" id="container">
+        <div class='madLibsEdit'>
+        </div>
+
+        <div class='madLibsPreview'>
+        </div>
+      </div>
 
    
     <script src="https://kit.fontawesome.com/d0010047df.js" crossorigin="anonymous"></script>

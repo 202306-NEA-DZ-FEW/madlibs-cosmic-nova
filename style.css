@@ -11,15 +11,24 @@
  }
 
 
- html, body {
+ /* html, body {
   scroll-behavior: smooth;
-}
+} */
 
 
  body{
+  height: 100vh;
   background-color: #1A67B3;
-  overflow-x: hidden;
+  overflow: hidden;
+  background-image:  url('./images/stars.svg'), url('./images/bg.svg') ;
+  background-repeat: no-repeat, no-repeat;
+  animation: animateBg 60s linear infinite;
  }
+ @keyframes animateBg {
+  0% {background-position: 0 0, 100% 0}
+  50% {background-position: 100% 0, 200% 0}
+  100% {background-position: 0 0, 100% 0} 
+}
  
  audio {
   display: none;
@@ -27,25 +36,35 @@
 
 
  .cosmicPlanet{
-  width: 100%;
- 
+  width: 1200px;
+  height: 1200px;
+ aspect-ratio: 1/1;
   position: absolute;
-  bottom: -140%;
+  bottom: calc(-100% - 220px);
+  left: calc(50% - 300px);
   align-content: center;
-  padding-left: 20px;
-
+  /* padding-left: 20px; */
   animation: spin 150s linear infinite;
   display: block;
   mix-blend-mode:screen;
-  z-index: 2;
+  z-index: -2;
+  margin: auto;
 }
-
-.madLibsEdit{
+#wish{
+  animation: falling 4s linear infinite;
+}
+@keyframes falling {
+  100%{
+    transform: translateX(-50vw) translateY(100vh);
+    
+  }
+}
+/* .madLibsEdit{
   position: absolute;
 }
 .madLibsPreview{
   position: absolute;
-}
+} */
 
  .Group{
   position: absolute;
@@ -83,20 +102,21 @@
  }
  .spaceShip {
    width: 200px;
-   height: auto;
+
+   /* height: auto; */
+   aspect-ratio: 9/16;
    position: absolute;
-   top: 0;
-   left: 650px;
-   left: 650px;
-   z-index: 50;
+   top: -60px;
+   left: calc(50% - 100px);
+   /* z-index: 50; */
  }
  .fire {
    width: 200px;
    height: auto;
    position: absolute;
-   top: 220px;
-   left: 650px;
-   z-index: 49;
+   top: 200px;
+   left: calc(50% - 100px);
+   /* z-index: 49; */
    transform: rotate(180deg);
  }
 .stars{
@@ -112,15 +132,40 @@
   animation: twinkling 30s linear infinite;
 
 }
+#hero-title{
+  opacity: 0;
+  color: white;
+  margin: 50px auto;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 300;
+}
+#hero-title *{
+  text-shadow: 0 0 5px #ddd5f5, 0 0 25px #ddd5f5, 0 0 50px #ddd5f5, 0 0 100px #ddd5f5, 0 0 200px #ddd5f5;
+  -webkit-text-stroke: 1px white;
+  color: rgba(0, 0, 0, 0);
+  animation: flicker 3s linear infinite;
 
-.spaceShip, .fire, .planet {
+}
+@keyframes flicker {
+  0% {
+    text-shadow: 0 0 5px #ddd5f5, 0 0 25px #ddd5f5, 0 0 50px #ddd5f5, 0 0 100px #ddd5f5, 0 0 150px #ddd5f5;
+  }
+  50% {
+    text-shadow: 0 0 15px #ddd5f5, 0 0 35px #ddd5f5, 0 0 60px #ddd5f5, 0 0 120px #ddd5f5, 0 0 170px #ddd5f5;
+  }
+  100% {
+    text-shadow: 00 0 20px #ddd5f5, 0 0 45px #ddd5f5, 0 0 70px #ddd5f5, 0 0 130px #ddd5f5, 0 0 190px #ddd5f5;
+  }
+}
+.spaceShip, .fire {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 #wish{
   position: absolute;
   mix-blend-mode: screen;
-  left: 600px;
+  left: 300px;
   top: -200px;
   
 }
@@ -128,7 +173,7 @@
 #text1{
   position: absolute;
   top: 350px;
-  left: 600px;;
+  left: 300px;;
   display: none;
 }
 
@@ -142,19 +187,20 @@
 
 @keyframes rotateUFO {
   0% {
-    transform: rotate(0deg); 
+    transform: rotate(0deg) translateX(100px); 
   }
   100% {
-    transform: rotate(30deg); 
+    transform: rotate(30deg) translateX(500px); 
   }
 }
 
 #ufo{
   position: absolute;
   top: 300px;
-  left: 1000px;
-  height: 100px;
+  right: 200px;
+  left: 1200px;
   animation: rotateUFO 10s linear infinite;
+  z-index: 0;
 
 }
 
@@ -213,7 +259,104 @@
   border: 1px solid #4006f3;
  }
 
-
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
+  margin: 50px auto;
+  height: 80%;
+  /* border: 2px solid white; */
+  border-radius: 0 10px 0 10px;
+  z-index: 500;
+  background: rgba(8, 0, 0, 0.5);
+  box-shadow: 0 0 5px #ddd5f5;
+  padding: 1rem;
+  gap: .5rem;
+  transition: all ease 2s;
+}
+.inputWord{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+    gap: 1rem;
+    
+}
+.inputWord input{
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid white;
+  width: auto;
+}
  .none{
   display: none;
+ }
+ .madLibsEdit, .madLibsPreview{
+  
+  height: 95%;
+  color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border: 2px solid white;
+    padding: .75rem;
+ }
+ .madLibsEdit form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+ }
+ #storyPreview{
+  color: transparent;
+ }
+ .hiddenWord{
+  background: white;
+  color: black;
+ }
+ .shipStyle{
+  width: 120px;
+  height: 500px;
+  aspect-ratio: 9/16;
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 60px);
+  z-index: 1;
+  top: 10px;
+  transition: all ease-in 2s;
+  animation: orbit 10s linear infinite;
+ }
+ @keyframes orbit {
+  0% {
+    transform: translate(300px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(0px) translateY(-300px) rotate(-90deg);
+  }
+  50% {
+    transform: translateY(-300px) translateX(0px) rotate(180deg);
+  }
+  75% {
+    transform: translateX(-300px) translateY(0px) rotate(-90deg);
+  }
+  100% {
+    transform: translateY(300px) translateX(0px) rotate(0deg);
+  }
+ }
+ .planetStyle{
+  width: 800px;
+  height: 800px;
+ aspect-ratio: 1/1;
+  position: absolute;
+  bottom: calc(50% - 400px);
+  left: calc(50% - 400px);
+  align-content: center;
+  /* padding-left: 20px; */
+  animation: spin 150s linear infinite;
+  display: block;
+  mix-blend-mode:screen;
+  z-index: -2;
+  margin: auto;
+  transition: all ease-in 2s;
  }
