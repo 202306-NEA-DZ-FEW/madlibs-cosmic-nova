@@ -31,7 +31,7 @@ display: none;
 
 .Group{
 position: absolute;
-width: 100%;
+width: 105%;
 height: 100vh;
 top: 0;
 left: 0;
@@ -64,9 +64,7 @@ z-index: 3;
 @keyframes spin{
   100% { transform: rotate(360deg); }
 }
-.spaceShip {
 
-}
 
 .stars{
 position: absolute;
@@ -176,54 +174,58 @@ display: none;
 }
 
 
-/* #astro1 ,#astro2 ,#astro3 ,#astro4 ,#astro5 ,#astro6,#circle{
+#astro1 ,#astro2 ,#astro3 ,#astro4 ,#astro5 ,#astro6,#circle{
   position: absolute;
-  z-index: 30;
+  z-index: 3;
   display: none;
   
 }
 
 #astro1{
-top: 700px;
-left: 350px;
+top: 90%;
+left: 23%;
+width: 11.5%;
 }
 #astro2{
-top: 630px;
-left: 430px;
+  top: 82%;
+  left: 29%;
+  width: 11.5%;
 }
 #astro3{
-top: 600px;
-left: 550px;
+  top: 78%;
+  left: 35%;
+  width: 11.5%;
 }
 #astro4{
-top: 580px;
-left: 820px;
+  top: 78%;
+  left: 55%;
+  width: 10%;
 }
 #astro5{
-top: 580px;
-left: 900px;
+  top: 80%;
+  left: 60%;
+  width: 11.5%;
 }
 #astro6{
-top: 630px;
-left: 1000px;
+  top: 88%;
+  left: 66%;
+  width: 11.5%;
 }
 #circle{
-top: 690px;
-left: 690px;
-} */
+  top: 89%;
+  left: 45.2%;
+  width: 9.5%;
+} 
 /* ------ css mohamed --------- */
 
 .spaceShip{
   position: absolute;
-  width: 200px;
-  height: auto;
-  top: 0;
+  width: 13%;
   z-index: 50;
 }
 
 .fire {
-  width: 200px;
-  height: auto;
+  width: 13%;
   position: absolute;
   z-index: 49;
   transform: rotate(180deg);
@@ -235,19 +237,29 @@ div.spaceship1{
   justify-content: center; 
   align-items: center;  
 }
-
+/* 
 div.cosmicplanet1{
   position: absolute;
-  display: flex;
+  display: block;
   justify-content: center; 
   align-items: center; 
-}
+ 
+} */
 
 .cosmicPlanet{
+  width: 100%;
+  
+  position: absolute;
+  bottom: -140%;
+  align-content: center;
+ 
+  
   animation: spin 150s linear infinite;
+  display: block;
   mix-blend-mode:screen;
   z-index: 2;
   }
+  
 
   .press{
     position: absolute;
@@ -272,9 +284,10 @@ div.cosmicplanet1{
       }
 
 .formplace{
-  width: 98%;
-  margin-top: ;
+  width: 80%;
+  margin-top: -10%;
   padding: 0;
+  z-index: 4; 
   
 }
 
@@ -283,29 +296,35 @@ div.buttons{
   display: flex;
   justify-content: center; 
   align-items: center; 
+  z-index: 5;
   
 }
 
 .generate{
   position: absolute;
-  width: 10%;
+  width: 7%;
   height: 40px;
   border:#4006f3 2px solid ;
   margin-right: 0.5%;
   font-size: 80%;
   color: #4006f3;
+  z-index: 5;
+  margin-top: -10%;
   
   }
 
 .clear{
   position: absolute;
-  width: 10%;
+  width: 7%;
   height: 40px;
   border:red 2px solid ;
   margin-right: 0.5%;
   font-size: 80%;
-  margin-top: 20%;
+  margin-top: 15%;
   color: red;
+  z-index: 5;
+  left: 66%;
+ 
 } 
 
 div.herotext{
@@ -320,6 +339,9 @@ div.herotext{
 
   z-index: 400;
   position: absolute;
+  margin-top: 31%;
+  font-size: 110%; 
+  
  
  
 
@@ -328,17 +350,20 @@ div.herotext{
 
 #container{
   z-index: 400;
-
   display: flex;
   flex-direction: row;
+
+  
+ 
 
   
 }
 
 .madLibsPreview {
+ 
+  
 
-  top: 900px;
-  left:59%;
+  left:57.5%;
   width:25%;
   text-align: center;
 
@@ -347,19 +372,20 @@ div.herotext{
 
 }
 .madLibsEdit {
-  top: 900px;
-  left: 18%;
+
+  left: 17%;
   width: 25%; 
   text-align: center;
+
 }
 
 input{
   padding: 2px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-
+  border-radius: 3px;
   width: 20%;
-  margin-bottom: 5px;
+  font-size: 50%;
+ 
 }
 
 #text2{

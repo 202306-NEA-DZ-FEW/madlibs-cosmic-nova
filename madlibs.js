@@ -141,17 +141,16 @@ const ufo = document.getElementById('ufo')
 const astros = document.getElementsByClassName('astro');
 
 
-fire.style.top = '220px';
-ship.style.top = '0px';
+fire.style.top = '28%';
+ship.style.top = '0.5%';
 fire.style.opacity = '100';
 planet.style.width = '100%';
-planet.style.top = '350px';
-planet.style.paddingLeft = '20px';
-wish.style.left = '600px';
-wish.style.top = '-200px';
-ufo.style.top = '300px';
-ufo.style.left = '1000px';
-ufo.style.height = '100px';
+planet.style.top = '50%';
+wish.style.left = '70%';
+wish.style.top = '-20%';
+ufo.style.top = '30%';
+ufo.style.left = '70%';
+ufo.style.height = '15%';
 text1.style.display = 'none';
 text2.style.display = 'none';
 enter.style.display = 'block';
@@ -171,16 +170,18 @@ window.addEventListener('scroll', (e) => {
   let value = window.scrollY;
 
   if (value <= 90){
-    ship.style.top = value * 5.5 + 'px';
-    fire.style.top = 220 + value * 5.5 + 'px';
-    planet.style.left = 20 + value * 2.5 + 'px';
-    wish.style.left = 600 - value * 6 + 'px';
-    wish.style.top = -200 + value * 6 + 'px';
-    ufo.style.top = 300 + value * 1 + 'px';
-    ufo.style.left = 1000 + value * 1 + 'px';
-    ufo.style.height = 100 + value * 2 + 'px';
+    ship.style.top = 0.5 + value * 0.7 + '%';
+    fire.style.top = 28 + value * 0.7 + '%';
+    planet.style.left = value * 0.18 + '%';
+    wish.style.left = 70 - value * 0.6 + '%';
+    wish.style.top = -20 + value * 0.6 + '%';
+    ufo.style.top = 30 + value * 0.2 + '%';
+    ufo.style.left = 70 + value * 0.05 + '%';
+    ufo.style.height = 15 + value * 0.3 + '%';
     planet.style.width =  100 - value / 3 + '%';
-    planet.style.top = 350 + value * 2 + 'px';
+    planet.style.top = 50 + value * 0.2 + '%';
+
+
 
   
 
@@ -193,15 +194,14 @@ window.addEventListener('scroll', (e) => {
     text2.style.display = 'block';
     enter.style.display = 'none';
     scroll.style.display = 'none';
-
-    ship.style.top = '480.8px';
-    fire.style.top = '712.8px';
-    planet.style.left = '240px';
-    wish.style.left = '67.2px';
-    wish.style.top = '332.8px';
-    ufo.style.top = '387.2px';
-    ufo.style.left = '1087.2px';
-    ufo.style.height = '274.4px';
+    ship.style.top = '62.1%';
+    fire.style.top = '89.6%';
+    planet.style.left = '16%';
+    wish.style.left = '17.2%';
+    wish.style.top = '32.8%';
+    ufo.style.top = '47.6%';
+    ufo.style.left = '70.4%';
+    ufo.style.height = '41.4%';
     planet.style.width =  '70.4%';
     planet.style.top = '524.4px';
     Array.from(astros).forEach(astro => {
