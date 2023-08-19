@@ -86,9 +86,13 @@ const windowHeight = window.innerHeight;
 
 
 function changeText(e){
-  console.log(e.target)
-
+  console.log(e)
+  const cont = document.getElementById(e.target.className).textContent
+  if(e.type === 'change'){
+    document.getElementById(e.target.className).textContent= cont
+  } else{
   document.getElementById(e.target.className).textContent= `${e.target.value} `
+}
 }
 
 function moveAround(e){
@@ -98,35 +102,35 @@ function moveAround(e){
     let fireTop = parseInt(fire.style.top.replace("px",""),10)
     let titleOpa = parseFloat(title.style.opacity)
     let enterOpa = parseFloat(enter.style.opacity)
+    let ufoWidth= parseInt(ufo.style.width.replace("px",""),10)
   //  const shipCenter= shipTop+(ship.style.height)
     if (ship.style.top === '410px'){
-      console.log("ship landed")
       fire.style.direction='none'
     }
-    if (e.deltaY > 0 && ship.style.top !== '410px') { 
-      if(shipTop >= windowHeight/3){ console.log("ship off")
+    if (e.deltaY > 0 && shipTop <= 410) {  
+      if(shipTop >= windowHeight/3){ 
       fire.style.opacity= 0
       } 
-      ship.style.top= `${shipTop + 10}px`
-      fire.style.top = `${fireTop + 10}px`
+      ship.style.top= `${shipTop + 25}px`
+      fire.style.top = `${fireTop + 25}px`
       fire.style.opacity= fire.style.opacity - 0.01
       if(title.style.opacity<1){
-      title.style.opacity= titleOpa + 0.01}
+      title.style.opacity= titleOpa + 0.05}
       if(enter.style.opacity<1){
-        enter.style.opacity= enterOpa + 0.01}
+        enter.style.opacity= enterOpa + 0.05}
       // ufo.style.top = 300 +5 + 'px';
       // ufo.style.left = 1000 +5 + 'px';
       // ufo.style.height = 100 +5 + 'px';
   
     } else {
        if (shipTop > (-50)){ 
-        console.log("sip top",ship.style.top, ship.style.top > '1px')
+        // console.log("sip top",ship.style.top, ship.style.top > '1px')
         ship.style.top= `${shipTop - 5}px`
         fire.style.top = `${fireTop - 5}px`
         if(title.style.opacity>0){
-        title.style.opacity= titleOpa - 0.02}
+        title.style.opacity= titleOpa - 0.05}
         if(enter.style.opacity>0){
-          enter.style.opacity= enterOpa - 0.02}
+          enter.style.opacity= enterOpa - 0.05}
         if(ship.style.top < '400px'){
            fire.style.opacity= 1
           }
@@ -142,11 +146,26 @@ getRawStory().then(parseStory).then((processedStory) => {
   const preview = document.querySelector('.madLibsPreview');
   const editForm = document.createElement('form')
   edit.appendChild(editForm)
+  const reseter = document.createElement(('button'))
+  reseter.className='reset revealBtn'
+  reseter.id='reseter'
+  reseter.textContent='RESET'
+ 
   
   const story = document.createElement('p') //the element that will hold the story
   story.id='storyPreview'
   story.textContent=""
+  story.className='transparent'
   preview.appendChild(story) // we append it to the prewien div
+  const divBtn = document.createElement('div')
+  preview.appendChild(divBtn)
+  divBtn.className= 'divBtn'
+  const reveal = document.createElement('button')
+  divBtn.appendChild(reveal)
+  reveal.className= 'revealBtn'
+  reveal.id= 'reveal'
+  reveal.textContent= 'REVEAL TEXT'
+  divBtn.appendChild(reseter)
   processedStory.forEach((wordObj, id)=> { // we will add word by word to create the story
     //const storyContent = story.textContent // we save the current content of the story 
     if(!wordObj.pos){ //we check if it will be hiddne or visible 
@@ -172,11 +191,12 @@ getRawStory().then(parseStory).then((processedStory) => {
       div.className='inputWord'
       editForm.appendChild(div)// we add it to the edit Div
       input.addEventListener('input', changeText)
+      input.addEventListener('change', changeText)
     } 
     
   })
 
-
+  
 window.addEventListener('wheel', moveAround );
 
 
@@ -239,7 +259,7 @@ const stopMusicButton = document.getElementById("stopMusic");
 // we set the edit and preview and the title to be hidden, and will be diwplayed after hitting enter
 const container = document.getElementById('container')
 
-
+const astros = document.getElementsByClassName('astro')
 enter.addEventListener("click", ()=>{
   container.classList.toggle('none')
   document.getElementById('hero-title').classList.toggle('none')
@@ -249,7 +269,18 @@ enter.addEventListener("click", ()=>{
   planet.classList.toggle('planetStyle')
   fire.classList.toggle('none')
   window.removeEventListener('wheel', moveAround)
-   ship.style.top=`100px`
+   ship.style.top=`-50px`
+   Array.from(astros).forEach(el=>{el.classList.toggle('none')})
+
 })
+
+document.getElementById('reveal').addEventListener('click',()=>{
+  document.querySelector('#storyPreview').classList.toggle('transparent')
+})
+document.getElementById('reseter').addEventListener('click', (e)=>{
+  e.preventDefault()
+  editForm.reset()
+})
+
 
 });
