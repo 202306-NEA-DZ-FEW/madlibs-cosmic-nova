@@ -26,19 +26,7 @@ display: none;
 }
 
 
-.cosmicPlanet{
-width: 100%;
 
-position: absolute;
-bottom: -140%;
-align-content: center;
-padding-left: 20px;
-
-animation: spin 150s linear infinite;
-display: block;
-mix-blend-mode:screen;
-z-index: 2;
-}
 
 
 .Group{
@@ -77,23 +65,9 @@ z-index: 3;
   100% { transform: rotate(360deg); }
 }
 .spaceShip {
- width: 200px;
- height: auto;
- position: absolute;
- top: 0;
- left: 650px;
- left: 650px;
- z-index: 50;
+
 }
-.fire {
- width: 200px;
- height: auto;
- position: absolute;
- top: 220px;
- left: 650px;
- z-index: 49;
- transform: rotate(180deg);
-}
+
 .stars{
 position: absolute;
 width: 120%;
@@ -120,11 +94,15 @@ top: -200px;
 
 }
 
-#text1{
+/* #text1{
 position: absolute;
 top: 350px;
-left: 600px;;
-display: none;
+left: 600px;
+display: flex;
+justify-content: center; 
+align-items: center; 
+border:black 5px solid ;
+
 }
 
 #text2{
@@ -132,8 +110,9 @@ position: absolute;
 top: 250px;
 left: 340px;
 height: 13%;
-display: none;
-}
+border:black 5px solid ;
+
+} */
 
 @keyframes rotateUFO {
 0% {
@@ -153,25 +132,8 @@ animation: rotateUFO 10s linear infinite;
 
 }
 
-.press{
-left: 70px;
-bottom: 50px;
-z-index: 20;
-position: absolute; 
-left: 70px;
-bottom: 50px;
-z-index: 20;
-position: absolute; 
-}
-.scroll{
-position: absolute;
-left: 1350px;
-bottom: 50px;
-z-index: 9;
-left: 1350px;
-bottom: 50px;
-z-index: 9;
-}
+
+
 
 .press,.scroll {
 
@@ -214,10 +176,11 @@ display: none;
 }
 
 
-#astro1 ,#astro2 ,#astro3 ,#astro4 ,#astro5 ,#astro6,#circle{
+/* #astro1 ,#astro2 ,#astro3 ,#astro4 ,#astro5 ,#astro6,#circle{
   position: absolute;
   z-index: 30;
   display: none;
+  
 }
 
 #astro1{
@@ -247,31 +210,110 @@ left: 1000px;
 #circle{
 top: 690px;
 left: 690px;
+} */
+/* ------ css mohamed --------- */
+
+.spaceShip{
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 0;
+  z-index: 50;
 }
 
+.fire {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  z-index: 49;
+  transform: rotate(180deg);
+  
+ }
 
-#formplace{
-position: absolute;
-width: 80%;
-z-index: 32;
-top: 800px;
-left: 170px;
+div.spaceship1{
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
 }
 
-#generate{
-position: absolute;
-width: 130px;
-z-index: 33;
-top: 1070px;
-left: 707px;
+div.cosmicplanet1{
+  position: absolute;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
 }
 
-#clear{
-position: absolute;
-width: 100px;
-z-index: 33;
-top: 1300px;
-left: 1030px;
+.cosmicPlanet{
+  animation: spin 150s linear infinite;
+  mix-blend-mode:screen;
+  z-index: 2;
+  }
+
+  .press{
+    position: absolute;
+    z-index: 20;
+    height: 15%;
+    margin-top: 50%;
+    position: fixed;
+    bottom: 0.5em;
+    left: 5%; 
+    transform: translateX(-40%);
+    }
+
+.scroll{
+    position: absolute;
+    z-index: 20;
+    height: 15%;
+    margin-top: 50%;
+    position: fixed;
+    bottom: 0.5em;
+    right: 5%; 
+    transform: translateX(40%);
+      }
+
+.formplace{
+  width: 98%;
+  margin-top: ;
+  padding: 0;
+  
+}
+
+div.buttons{
+  margin-top: 35%;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  
+}
+
+.generate{
+  position: absolute;
+  width: 10%;
+  height: 40px;
+  border:#4006f3 2px solid ;
+  margin-right: 0.5%;
+  font-size: 80%;
+  color: #4006f3;
+  
+  }
+
+.clear{
+  position: absolute;
+  width: 10%;
+  height: 40px;
+  border:red 2px solid ;
+  margin-right: 0.5%;
+  font-size: 80%;
+  margin-top: 20%;
+  color: red;
+} 
+
+div.herotext{
+  position: relative;
+  height: 400px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
 }
 
 .madLibsEdit, .madLibsPreview {
@@ -320,4 +362,14 @@ input{
   margin-bottom: 5px;
 }
 
+#text2{
+  width: 70%;
+  margin-top: 10%;
+  position: absolute;
+}
 
+#text1{
+  width: 30%;
+  margin-top: 30%;
+  position: absolute;
+}
