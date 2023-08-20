@@ -54,76 +54,95 @@ function parseStory(rawStory) {
  * You'll want to use the results of parseStory() to display the story on the page.
  */
 getRawStory().then(parseStory).then((processedStory) => {
+  
   const editView = document.querySelector('.madLibsEdit');
   const previewView = document.querySelector('.madLibsPreview');
-
-  const updatePreview = () => {
-    previewView.innerHTML = '';
-    let textContent = ''; 
-  
-    processedStory.forEach((word) => {
-      if (word.pos) {
-        const input = editView.querySelector(`input[data-pos="${word.pos}"]`);
-        textContent += ' ' + input.value || ` [${word.pos}]`;
-      } else {
-        
-         textContent += ' ' + word.word + ' '; 
-         
-      }
-    });
-  
-    const combinedText = document.createTextNode(textContent);
-    previewView.appendChild(combinedText);
-  };
 
   processedStory.forEach((word) => {
     if (word.pos) {
       const input = document.createElement('input');
+      input.setAttribute('maxlength', '20');
       input.setAttribute('data-pos', word.pos);
-      
+      input.setAttribute('placeholder', word.pos);
+
       input.addEventListener('input', (event) => {
-        
         updatePreview();
       });
 
       editView.appendChild(input);
     } else {
-      editView.appendChild(document.createTextNode(word.word + ' ')); 
+      const span = document.createElement('span');
+      span.textContent = word.word + ' ';
+      span.className = 'word';
+      editView.appendChild(span);
     }
   });
 
-  updatePreview(); 
+  const toggleHiddenTextButton = document.createElement('button');
+  toggleHiddenTextButton.textContent = 'Show Hidden Story';
+  toggleHiddenTextButton.classList.add('showStory');
+  toggleHiddenTextButton.addEventListener('click', () => {
+    const hiddenWordSpans = editView.querySelectorAll('span.word');
+    hiddenWordSpans.forEach((span) => {
+      span.style.display = span.style.display === 'none' ? 'inline' : 'none';
+    });
+  });
+  editView.appendChild(toggleHiddenTextButton);
 
+  const hideWordButton = document.getElementById('generate'); 
+  hideWordButton.addEventListener('click', () => {
+    toggleWordVisibility();
+  });
 
+  const clearButton = document.getElementById('clear'); 
+  clearButton.addEventListener('click', () => {
+    clearInputs(); 
+  });
 
+  const toggleWordVisibility = () => {
+    const wordSpans = previewView.querySelectorAll('span.word'); 
 
+    wordSpans.forEach((span) => {
+      span.style.display = span.style.display === 'none' ? 'inline' : 'none'; 
+    });
+  };
 
+  const clearInputs = () => {
+    const inputFields = editView.querySelectorAll('input[data-pos]'); 
 
-  // const story = document.createElement('p') //the element that will hold the story
-  // story.id='storyPreview';
-  // story.textContent="";
-  // preview.appendChild(story) // we append it to the prewien div
-  // processedStory.forEach((wordObj)=> { // we will add word by word to create the story
-  //   const storyContent = story.textContent // we save the current content of the story 
-  //   if(!wordObj.pos){ //we check if it will be hiddne or visible 
-  //     story.textContent= `${storyContent} ${wordObj.word} `//in case visible we add it to the content
-  //   }else{ // in case hidden we will put it in span and append it to the story
-  //     const span = document.createElement('span')
-  //     span.textContent= `____[${wordObj.pos}]____`
-  //     story.appendChild(span)
-  //   }
-  // })
-  // processedStory.forEach((wordObj)=> {
-  //   if(wordObj.pos){ //we check if it a hidden word
-  //     const div = document.createElement('div') //the div that will hold the inut and label
-  //     div.innerHTML= `$<label for="">[${wordObj.pos}]</label>
-  //     <input type="text"  >`
-  //     edit.appendChild(div)// we add it to the edit Div
-  //   } 
-    
-  // })
-  
+    inputFields.forEach((input) => {
+      input.value = ''; 
+    });
 
+    updatePreview();
+  };
+
+  const updatePreview = () => {
+    previewView.innerHTML = '';
+
+    processedStory.forEach((word) => {
+      if (word.pos) {
+        const input = editView.querySelector(`input[data-pos="${word.pos}"]`);
+
+        const span = document.createElement('span');
+        span.textContent = ' ' + (input.value || `[${word.pos}]`);
+        span.className = 'pos'; 
+
+        if (input.value) {
+          span.style.color = 'red'; 
+        }
+
+        previewView.appendChild(span);
+      } else {
+        const span = document.createElement('span');
+        span.textContent = ' ' + word.word + ' ';
+        span.className = 'word'; 
+        previewView.appendChild(span);
+      }
+    });
+  };
+
+  updatePreview();
 });
 
 
@@ -141,6 +160,10 @@ const ufo = document.getElementById('ufo')
 const astros = document.getElementsByClassName('astro');
 
 
+
+
+
+if (window.innerWidth >= 600){
 fire.style.top = '28%';
 ship.style.top = '0.5%';
 fire.style.opacity = '100';
@@ -159,13 +182,6 @@ Array.from(astros).forEach(astro => {
   astro.style.display = 'none';
 })
 
-
-
-
-
-
-
-
 window.addEventListener('scroll', (e) => {
   let value = window.scrollY;
 
@@ -180,14 +196,8 @@ window.addEventListener('scroll', (e) => {
     ufo.style.height = 15 + value * 0.3 + '%';
     planet.style.width =  100 - value / 3 + '%';
     planet.style.top = 50 + value * 0.2 + '%';
-
-
-
-  
-
   }
 
-   
   if (value >= 100){
     fire.style.opacity = 1 - (value - 100) / 100;
     text1.style.display = 'block';
@@ -217,12 +227,9 @@ Array.from(astros).forEach(astro => {
 });
   }
 
-
-
-  
 });
 
-
+}
 /// function for music button  toggleMusicButton
 
 const backgroundMusic = document.getElementById("backgroundMusic");
