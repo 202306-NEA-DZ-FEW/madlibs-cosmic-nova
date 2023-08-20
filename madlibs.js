@@ -28,7 +28,7 @@
  */
 
 
-function parseStory(rawStory) {
+/*function parseStory(rawStory) {
   console.log(rawStory);
   const words = rawStory.split(/\s/);
   const obj = [];
@@ -45,7 +45,7 @@ function parseStory(rawStory) {
   });
    return obj;
 
-}
+}*/
 
 /**
  * All your other JavaScript code goes here, inside the function. Don't worry about
@@ -53,7 +53,7 @@ function parseStory(rawStory) {
  * 
  * You'll want to use the results of parseStory() to display the story on the page.
  */
-getRawStory().then(parseStory).then((processedStory) => {
+/*getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
   
   document.addEventListener('DOMContentLoaded', () => {
@@ -186,4 +186,4 @@ enter.addEventListener("click", ()=>{
   document.querySelector('.scroll').classList.toggle('none')
 })
 
-});
+});*/
