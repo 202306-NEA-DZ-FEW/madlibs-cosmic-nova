@@ -159,11 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const text2 = document.getElementById('text2')
   const ufo = document.getElementById('ufo')
   const astros = document.getElementsByClassName('astro');
-  
-  
-  
-  
-  
+
   if (window.innerWidth >= 600){
   fire.style.top = '28%';
   ship.style.top = '0.5%';

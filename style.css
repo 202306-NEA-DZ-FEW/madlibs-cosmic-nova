@@ -29,8 +29,6 @@ display: none;
 
 
 
-
-
 .Group{
 position: absolute;
 width: 105%;
@@ -41,19 +39,6 @@ object-fit: cover;
 z-index: -1;
 
 }
-
-/* .img2{
-position: absolute;
-width: 100%;
-height: 150vh;
-top: 750px;
-height: 150vh;
-top: 750px;
-left: 0;
-object-fit: cover;
-
-z-index: 3;
-} */
 
 @keyframes twinkling {
 
@@ -303,11 +288,11 @@ div.buttons{
   position: absolute;
   width: 7%;
   height: 40px;
-  border:red 2px solid ;
+  border:#4006f3 2px solid ;
   margin-right: 0.5%;
   font-size: 80%;
   margin-top: 15%;
-  color: red;
+  color: #4006f3;
   z-index: 5;
   left: 66%;
  
@@ -407,10 +392,8 @@ input{
 
   
  #text2 , #text1 {
-  text-shadow: 0 0 5px #ddd5f5, 0 0 25px #ddd5f5, 0 0 50px #ddd5f5, 0 0 100px #ddd5f5, 0 0 200px #ddd5f5;
-  -webkit-text-stroke: 1px rgb(255, 255, 255);
-  
- 
+
+
   animation: flicker 3s linear infinite;
   z-index: 300;
   display: none;
@@ -445,11 +428,8 @@ input{
   .Group{
     position: absolute;
 
-
     }
 
-
-    
     .madLibsEdit, .madLibsPreview {
     
     
@@ -635,3 +615,4 @@ box-sizing:border-box;
   drop-shadow(0 25px 150px #4006f3);
   
 }
+
