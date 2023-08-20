@@ -382,11 +382,14 @@ div.herotext{
   }
 
 input{
-  padding: 2px;
-  border: 1px solid #ccc;
+  padding: 3px;
+  border: 1px solid #4fbc61;
   border-radius: 3px;
   width: 20%;
   font-size: 50%;
+  text-align: center;
+  background-color: #e1ff1b;
+  margin: 2px;
  
 }
 
@@ -438,10 +441,11 @@ input{
 
 
 @media screen and (max-width: 600px) {
+
   .Group{
     position: absolute;
-    width: 1500px;
-    height: 2600px;
+
+
     }
 
 
@@ -479,7 +483,7 @@ input{
 .madLibsPreview {
   
   margin-top: 3%;
-  left: 17%;
+  left: 13%;
  border-color: #3490B4;
  border-style:solid;
  box-shadow: 0px 1px 2px 0px rgba(9, 120, 120, 0.7),
@@ -496,7 +500,7 @@ box-sizing:border-box;
 }
 .madLibsEdit {
   margin-top: 31%;
-  left: 17%;
+  left: 13%;
 
    border-color: #3490B4;
  border-style:solid;
@@ -513,15 +517,12 @@ box-sizing:border-box;
 
 }
 
-    .stars {
-    width: 1500px;
-    height: 800px;
-    }
+
     .stars2 {
       position: absolute;
-      top: 600px;
-      width: 1500px;
-      height: 800px;
+      top: 30%;
+
+     
     }
     .spaceShip {
       display: none;
@@ -621,5 +622,16 @@ box-sizing:border-box;
     }
 
 
+  
+}
+
+
+
+.astro:hover {
+  opacity: 1; 
+  filter: drop-shadow(0 5px 5px #4006f3) drop-shadow(0 25px 25px #4006f3)
+  drop-shadow(0 25px 150px #4006f3);
+  filter: drop-shadow(0 5px 5px #4006f3) drop-shadow(0 25px 25px #4006f3)
+  drop-shadow(0 25px 150px #4006f3);
   
 }
