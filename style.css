@@ -27,12 +27,12 @@ display: none;
 
 
 .cosmicPlanet{
-width: 100%;
+  width: 100%;
 
-position: absolute;
-bottom: -140%;
-align-content: center;
-padding-left: 20px;
+  position: absolute;
+  bottom: -140%;
+  align-content: center;
+  padding-left: 20px;
 
 animation: spin 150s linear infinite;
 display: block;
@@ -54,6 +54,7 @@ height: 100vh;
 top: 0;
 left: 0;
 object-fit: cover;
+z-index: -1;
 }
 
 /* .img2{
@@ -217,3 +218,149 @@ border: 1px solid #4006f3;
 .none{
 display: none;
 }
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  
+    .cosmicPlanet {
+      width: 300%; 
+      position: absolute;
+      bottom: -3250px; 
+      left: 50%;
+      transform: translateX(-40%);
+      mix-blend-mode: screen;
+      z-index: 2;
+    }
+    .Group{
+    position: absolute;
+    width: 250%;
+    height: 300%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+    }
+
+    @keyframes twinkling {
+    50% {
+      transform: translateX(100px);
+    }
+    }
+    @keyframes spin{
+      100% { transform: rotate(360deg); }
+    }
+    .spaceShip {
+     width: 200px;
+     height: auto;
+     position: absolute;
+     top: 0;
+     left: 650px;
+     z-index: 50;
+    }
+    .fire {
+     width: 200px;
+     height: auto;
+     position: absolute;
+     top: 220px;
+     left: 650px;
+     z-index: 49;
+     transform: rotate(180deg);
+    }
+    .stars{
+    position: absolute;
+    width: 120%;
+    animation: twinkling 30s linear infinite;
+    
+    }
+    .stars2{
+    position: absolute;
+    top : 900px;
+    width: 120%;
+    animation: twinkling 30s linear infinite;
+    
+    }
+    
+    .spaceShip, .fire, .planet {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    
+    #wish{
+    position: absolute;
+    mix-blend-mode: screen;
+    left: 600px;
+    top: -200px;
+    
+    }
+    
+    #text1{
+    position: absolute;
+    top: 350px;
+    left: 600px;;
+    display: none;
+    }
+    
+    #text2{
+    position: absolute;
+    top: 250px;
+    left: 340px;
+    height: 13%;
+    display: none;
+    }
+    
+    @keyframes rotateUFO {
+    0% {
+      transform: rotate(0deg); 
+    }
+    100% {
+      transform: rotate(30deg); 
+    }
+    }
+    
+    #ufo{
+    position: absolute;
+    top: 20%;
+    left: 2000px;
+    height: 300px;
+    animation: rotateUFO 10s linear infinite;
+    
+    }
+    
+    .press {
+      right: 2500px;
+      left: 25oopx;
+      bottom: 1500px;
+    }
+  
+    .scroll {
+      right: 2500px;
+      left: 2500px;
+      bottom: 1500px;
+
+    }
+    
+    .speakers {
+    position:absolute;
+    right: 45px;
+    top: 45px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    
+    }
+    
+    .on {
+    display: block;
+    }
+    .off {
+    display: none;
+    }
+    button {
+    border-radius: 5px;
+    border: 1px solid #4006f3;
+    }
+    
+    
+    .none{
+    display: none;
+    }
+  }
