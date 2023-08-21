@@ -37,6 +37,7 @@ function parseStory(rawStory) {
     if (word.includes('[')){
       const pos = word.split(/[\[\]]/);
       obj.push({word: pos[0], pos: pos[1]});
+      console.log(pos);
     }else{
      obj.push({word: word});
     }
