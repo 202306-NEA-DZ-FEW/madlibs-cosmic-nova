@@ -56,14 +56,14 @@ z-index: -1;
 
 .stars{
 position: absolute;
-width: 100%;
+width: 95%;
 animation: twinkling 30s linear infinite;
 
 }
 .stars2{
 position: absolute;
 top : 900px;
-width: 100%;
+width: 95%;
 animation: twinkling 30s linear infinite;
 
 }
@@ -274,12 +274,15 @@ div.buttons{
   position: absolute;
   width: 7%;
   height: 40px;
-  border:#4006f3 2px solid ;
+  border:black 2px solid ;
   margin-right: 0.5%;
   font-size: 80%;
-  color: #4006f3;
+  color: black;
   z-index: 10;
   margin-top: -10%;
+  background-color: #e1ff1b;
+  box-shadow: 0 2px 4px rgba(3, 3, 3, 0.648);
+  
   
   left: 46%;
   }
@@ -288,13 +291,15 @@ div.buttons{
   position: absolute;
   width: 7%;
   height: 40px;
-  border:#4006f3 2px solid ;
+  border:black 2px solid ;
   margin-right: 0.5%;
   font-size: 80%;
   margin-top: 15%;
-  color: #4006f3;
   z-index: 5;
   left: 66%;
+  background-color: #e1ff1b;
+  box-shadow: 0 2px 4px rgba(3, 3, 3, 0.648);
+  color: black;
  
 } 
 
@@ -346,7 +351,7 @@ div.herotext{
   z-index: 400;
   display: flex;
   flex-direction: row;
-  font-size: 1.4vw;
+  font-size: 1.2vw;
 
   
 }
@@ -413,12 +418,14 @@ input{
 
 .showStory{
 
-  border:#4006f3 2px solid ;
+  border:black 2px solid ;
   margin-right: 0.5%;
   font-size: 80%;
-  color: #4006f3;
   z-index: 5;
   margin-top: 5%;
+  background-color: #e1ff1b;
+  box-shadow: 0 2px 4px rgba(3, 3, 3, 0.648);
+  color: black;
 }
 
 
@@ -569,10 +576,8 @@ box-sizing:border-box;
       position:absolute;
       width: 15%;
       height: 40px;
-      border:#4006f3 2px solid ;
       margin-right: 0.5%;
       font-size: 80%;
-      color: #4006f3;
       z-index: 5;
       top: 75%;
       left: 46%;
@@ -583,11 +588,9 @@ box-sizing:border-box;
       position: absolute;
       width: 15%;
       height: 40px;
-      border:red 2px solid ;
       margin-right: 0.5%;
       font-size: 80%;
       margin-top: -55%;
-      color: red;
       z-index: 5;
       left: 46%;
 

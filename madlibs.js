@@ -78,44 +78,43 @@ getRawStory().then(parseStory).then((processedStory) => {
     }
   });
 
-  const toggleHiddenTextButton = document.createElement('button');
-  toggleHiddenTextButton.textContent = 'Show Hidden Story';
-  toggleHiddenTextButton.classList.add('showStory');
-  toggleHiddenTextButton.addEventListener('click', () => {
+  const showstory = document.createElement('button');
+  showstory.textContent = 'Show Hidden Story';
+  showstory.classList.add('showStory');
+  showstory.addEventListener('click', () => {
     const hiddenWordSpans = editView.querySelectorAll('span.word');
     hiddenWordSpans.forEach((span) => {
       span.style.display = span.style.display === 'none' ? 'inline' : 'none';
     });
   });
-  editView.appendChild(toggleHiddenTextButton);
+  editView.appendChild(showstory);
 
-  const hideWordButton = document.getElementById('generate'); 
-  hideWordButton.addEventListener('click', () => {
-    toggleWordVisibility();
-  });
+  const generate = document.getElementById('generate'); 
 
-  const clearButton = document.getElementById('clear'); 
-  clearButton.addEventListener('click', () => {
-    clearInputs(); 
-  });
-
-  const toggleWordVisibility = () => {
+  generate.addEventListener('click', () => {
+    
     const wordSpans = previewView.querySelectorAll('span.word'); 
 
     wordSpans.forEach((span) => {
       span.style.display = span.style.display === 'none' ? 'inline' : 'none'; 
     });
-  };
 
-  const clearInputs = () => {
-    const inputFields = editView.querySelectorAll('input[data-pos]'); 
+  });
 
-    inputFields.forEach((input) => {
-      input.value = ''; 
-    });
+  const clearButton = document.getElementById('clear'); 
+  clearButton.addEventListener('click', () => {
+  
+      const inputFields = editView.querySelectorAll('input[data-pos]'); 
+  
+      inputFields.forEach((input) => {
+        input.value = ''; 
+      });
+  
+      updatePreview();
+   
+  });
 
-    updatePreview();
-  };
+ 
 
   const updatePreview = () => {
     previewView.innerHTML = '';
@@ -129,7 +128,7 @@ getRawStory().then(parseStory).then((processedStory) => {
         span.className = 'pos'; 
 
         if (input.value) {
-          span.style.color = 'red'; 
+          span.style.color = '#e1ff1b'; 
         }
 
         previewView.appendChild(span);
