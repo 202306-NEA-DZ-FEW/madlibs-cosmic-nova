@@ -65,7 +65,8 @@ Join us on this fun journey through space and words with Cosmic Nova. Whether yo
 For inquiries and collaboration, contact us at :
 
 Sidahmed Slikh : https://github.com/Zino0031
-Darine tag : https://github.com/darinetag
+Darine t ag : https://github.com/darinetag
 Ghani Bahri : https://github.com/GhaniBahri
 Mohamed Cheraitia : https://github.com/mohamed-cheraitia
 Khaoula Sara :https://github.com/khaoulasara
+Dalila Meguenni : https://github.com/dalilia
